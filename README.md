@@ -13,7 +13,7 @@ I enrolled at Buckinghamshire New University as a Computing and Web development 
 **Module**: | CO453     |
 **Started**: | February 2022 |    
 
-1. [ App01: Distance Converter]()
+1. [App01: Distance Converter]()
 2. [App02: BMI Calculator]()
 3. [App03: Students Marks]()
 4. [App04: Social Network]()
