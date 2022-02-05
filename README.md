@@ -1,4 +1,15 @@
+# Student Name: Sudath Nawagamuwage
+## Student ID: {21428786}
+
+## Course: {BSc(Hons) Computing and Web Development }
+
+I enrolled at Buckinghamshire New University as a Computing and Web development undergraduate program because I would like to learn and excelling at new technologies.I would like to develop my technical skill such as a development language such as Java, JavaScript, C#, Python, HTML, CSS and mastering more software programs.
+
+## CO452 Lesson : {MON 13:00 Derek}
 # C# Console Applications App01 to App05
+
+**Module**: | CO453     |
+**Started**: | January 2021 |  
 | Author | Details |
 | ---- | ---- |
 **Name**: | Student Name  |
