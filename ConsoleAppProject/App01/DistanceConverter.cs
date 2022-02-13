@@ -1,4 +1,5 @@
-﻿namespace ConsoleAppProject.App01
+﻿using System;
+namespace ConsoleAppProject.App01
 {
     /// <summary>
     /// This class allows the user to convert distances measured and 
@@ -16,8 +17,10 @@
         /// 
         /// </summary>
         public void Run()
-        { 
-        
+        {
+            InputMiles();
+            CalculateFeet();
+            OutputFeet();
         }
 
         /// <summary>
@@ -25,7 +28,10 @@
         /// Input number as a double number
         /// </summary>        
         private void InputMiles ()
-        {  
+        {
+            Console.WriteLine("Please enter the number of miles > ");
+            string value = Console.ReadLine();
+            miles = Convert.ToDouble(value);
             
         }
         
