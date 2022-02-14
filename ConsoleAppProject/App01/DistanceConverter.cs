@@ -45,34 +45,34 @@ namespace ConsoleAppProject.App01
             CalculateMetres();
             OutputMetres();
         }
-        private int InputChoices()
+        //private int InputChoices()
 
-        {
-            Console.WriteLine(" Enter the choices");
-            Console.WriteLine(" 1.Miles  ");
-            Console.WriteLine(" 2.Feet  ");
-            Console.WriteLine(" 3.Metres ");
+        //{
+        //    Console.WriteLine(" Enter the choices");
+        //    Console.WriteLine(" 1.Miles  ");
+        //    Console.WriteLine(" 2.Feet  ");
+        //    Console.WriteLine(" 3.Metres ");
 
-            int value = (int)ConsoleHelper.InputNumber("enter your choices > ", 1, 3);
+        //    int value = (int)ConsoleHelper.InputNumber("enter your choices > ", 1, 3);
 
-            if (value == 1)
-            {
-                return 1;
-            }
-            else if (value == 2)
-            {
-                return 2;
-            }
-            else if (value == 3)
-            {
-                return 3;
-            }
-            else
-            {
-               return 0;
-            }
+        //    if (value == 1)
+        //    {
+        //        return 1;
+        //    }
+        //    else if (value == 2)
+        //    {
+        //        return 2;
+        //    }
+        //    else if (value == 3)
+        //    {
+        //        return 3;
+        //    }
+        //    else
+        //    {
+        //       return 0;
+        //    }
 
-        }
+        //}
         private void OutputHeadding( string prompt)
         {
             Console.WriteLine("\n ---------------------------------");
