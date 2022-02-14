@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleAppProject.Helpers;
+using System;
 namespace ConsoleAppProject.App01
 {
     /// <summary>
@@ -25,26 +26,53 @@ namespace ConsoleAppProject.App01
        
         public void MilesToFeet()
         {
-            OutputHeadding(" converting miles to feet ");
+            OutputHeadding(" Converting Miles to Feet ");
             InputMiles();
             CalculateFeet();
             OutputFeet();
         }
         public void FeetToMiles()
         {
-            OutputHeadding(" converting feet to miles ");
+            OutputHeadding(" Converting Feet to Miles ");
             InputFeet();
             CalculateMiles();
             OutputMiles();
         }
         public void MilesToMetres()
         {
-            OutputHeadding(" converting miles to metres ");
+            OutputHeadding(" Converting Miles to Metres ");
             InputMetres();
             CalculateMetres();
             OutputMetres();
         }
+        private int InputChoices()
 
+        {
+            Console.WriteLine(" Enter the choices");
+            Console.WriteLine(" 1.Miles  ");
+            Console.WriteLine(" 2.Feet  ");
+            Console.WriteLine(" 3.Metres ");
+
+            int value = (int)ConsoleHelper.InputNumber("enter your choices > ", 1, 3);
+
+            if (value == 1)
+            {
+                return 1;
+            }
+            else if (value == 2)
+            {
+                return 2;
+            }
+            else if (value == 3)
+            {
+                return 3;
+            }
+            else
+            {
+               return 0;
+            }
+
+        }
         private void OutputHeadding( string prompt)
         {
             Console.WriteLine("\n ---------------------------------");
@@ -64,16 +92,17 @@ namespace ConsoleAppProject.App01
         /// </summary>        
         private void InputMiles ()
         {
-            Console.WriteLine("Please enter the number of miles > ");
-            string value = Console.ReadLine();
-            miles = Convert.ToDouble(value);
-            
+            //Console.WriteLine("Please enter the number of miles > ");
+            //string value = Console.ReadLine();
+            //miles = Convert.ToDouble(value);
+            miles = ConsoleHelper.InputNumber("Please enter the number of miles >");
         }
         private void InputFeet()
         {
             Console.WriteLine("Please enter the number of feet > ");
             string value = Console.ReadLine();
             feet = Convert.ToDouble(value);
+
 
         }
         private void InputMetres()
