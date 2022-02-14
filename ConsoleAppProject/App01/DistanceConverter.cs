@@ -23,7 +23,7 @@ namespace ConsoleAppProject.App01
         /// 
         /// </summary>
        
-        public void MilesToiFeet()
+        public void MilesToFeet()
         {
             OutputHeadding(" converting miles to feet ");
             InputMiles();
