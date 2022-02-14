@@ -1,5 +1,4 @@
-﻿using ConsoleAppProject.Helpers;
-using System;
+﻿using System;
 namespace ConsoleAppProject.App01
 {
     /// <summary>
@@ -29,23 +28,21 @@ namespace ConsoleAppProject.App01
         private string fromUnit;
         private string toUnit;
 
-        public DistanceConverter()
-        {
-            fromUnit = MILES;
-            toUnit = FEET;
-        }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
+        //public DistanceConverter()
+        //{
+        //    fromUnit = MILES;
+        //    toUnit = FEET;
+        //}
 
         public void ConvertDistance()
         {
+            OutputHeadding();
+
             fromUnit = SelectUnit("Please select the from distamce unit > ");
+
             toUnit = SelectUnit("Please select the to distance unit > ");
 
-            OutputHeadding ($"Converting {fromUnit} to {toUnit}");
+            Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
 
             fromDistance = InputDistance($"Please enter the number of {fromUnit} >");
             
@@ -91,17 +88,12 @@ namespace ConsoleAppProject.App01
             return choice;
         }
 
-        private void OutputHeadding(string prompt)
+        private void OutputHeadding()
         {
             Console.WriteLine("\n ---------------------------------");
             Console.WriteLine("       Distance Converter         ");
             Console.WriteLine("     by Sudath Nawagamuwage           ");
             Console.WriteLine(" ---------------------------------\n");
-
-            Console.WriteLine(prompt);
-            Console.WriteLine();
-
-
         }
 
         /// <summary>
