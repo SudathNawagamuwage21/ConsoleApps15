@@ -36,13 +36,15 @@ namespace ConsoleAppProject.App01
 
         public void ConvertDistance()
         {
-            OutputHeading($"Converting {fromUnit} to {toUnit}");
+            OutputHeading();
 
-            fromUnit = SelectUnit("Please select the from distamce unit > ");
+            fromUnit = SelectUnit (" Please select the from distamce unit > ");
 
-            toUnit = SelectUnit("Please select the to distance unit > ");
-                      
-            fromDistance = InputDistance($"Please enter the number of {fromUnit} >");
+            toUnit = SelectUnit(" Please select the to distance unit > ");
+
+            Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
+
+            fromDistance = InputDistance($" Please enter the number of {fromUnit} >");
             
             CalculateDistance();
 
@@ -56,36 +58,54 @@ namespace ConsoleAppProject.App01
                 toDistance = fromDistance * FEET_IN_MILES;
             }
             else if (fromUnit == FEET & toUnit == MILES)
-            { 
+            {
                 toDistance = fromDistance / FEET_IN_MILES;
             }
             else if (fromUnit == MILES & toUnit == METRES)
             {
                 toDistance = fromDistance * METRES_IN_MILES;
             }
-            
+            else if (fromUnit == METRES & toUnit == MILES)
+            {
+                toDistance = fromDistance / METRES_IN_MILES;
+            }
+            else if (fromUnit == METRES & toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_METRES;
+            }
+            else if (fromUnit == FEET & toUnit == METRES)
+            {
+                toDistance = fromDistance / FEET_IN_METRES;
+            }
         }
 
         private string SelectUnit(string prompt)
         {
             string choice = DisplayChoices(prompt);
-
-            return ExecuteChoice(choice);
+            
+            string unit = ExecuteChoice(choice);
+            Console.WriteLine($"\n You have chosen {unit}");
+            return unit;
         }
         private static string ExecuteChoice(string choice)
         {
-            if (choice.Equals("1"))
+            //string unit = "INVALID CHOISE";
+
+            if (choice == "1")
             {
                 return FEET;
             }
-            else if (choice.Equals("2"))
+            else if (choice == "2")
             {
                 return METRES;
             }
-            else if (choice.Equals("3"))
+            else if (choice == "3")
             {
                 return MILES;
             }
+
+            //Console.WriteLine($"\n You have chosen {unit}");
+            //return unit;
             return null;
         }
 
@@ -115,8 +135,8 @@ namespace ConsoleAppProject.App01
         }
         private void OutputDestance()
         {
-            Console.WriteLine($"{ fromDistance} { fromUnit} " +
-                $" is {toDistance} { toUnit} !");
+            Console.WriteLine($"\n { fromDistance} { fromUnit} " +
+                $" is { toDistance} { toUnit} !\n");
         }
         private void OutputHeading()
         {
