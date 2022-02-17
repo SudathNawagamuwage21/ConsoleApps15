@@ -28,27 +28,42 @@ namespace ConsoleAppProject.App01
         private string fromUnit;
         private string toUnit;
 
-        //public DistanceConverter()
-        //{
-        //    fromUnit = MILES;
-        //    toUnit = FEET;
-        //}
+        public DistanceConverter()
+        {
+            fromUnit = MILES;
+            toUnit = FEET;
+        }
 
         public void ConvertDistance()
         {
-            OutputHeadding();
+            OutputHeading($"Converting {fromUnit} to {toUnit}");
 
             fromUnit = SelectUnit("Please select the from distamce unit > ");
 
             toUnit = SelectUnit("Please select the to distance unit > ");
-
-            Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
-
+                      
             fromDistance = InputDistance($"Please enter the number of {fromUnit} >");
             
-            //CalculateFeet();
+            CalculateDistance();
 
             OutputDestance();
+        }
+
+        private void CalculateDistance()
+        {
+            if (fromUnit == MILES & toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_MILES;
+            }
+            else if (fromUnit == FEET & toUnit == MILES)
+            { 
+                toDistance = fromDistance / FEET_IN_MILES;
+            }
+            else if (fromUnit == MILES & toUnit == METRES)
+            {
+                toDistance = fromDistance * METRES_IN_MILES;
+            }
+            
         }
 
         private string SelectUnit(string prompt)
@@ -56,9 +71,7 @@ namespace ConsoleAppProject.App01
             string choice = DisplayChoices(prompt);
 
             return ExecuteChoice(choice);
-
         }
-
         private static string ExecuteChoice(string choice)
         {
             if (choice.Equals("1"))
@@ -78,22 +91,15 @@ namespace ConsoleAppProject.App01
 
         private static string DisplayChoices(string prompt)
         {
-            Console.WriteLine(prompt);
+            Console.WriteLine();
             Console.WriteLine($" 1. {FEET}");
             Console.WriteLine($" 2. {METRES}");
             Console.WriteLine($" 3. {MILES}");
+            Console.WriteLine();
 
             Console.Write(prompt);
             string choice = Console.ReadLine();
             return choice;
-        }
-
-        private void OutputHeadding()
-        {
-            Console.WriteLine("\n ---------------------------------");
-            Console.WriteLine("       Distance Converter         ");
-            Console.WriteLine("     by Sudath Nawagamuwage           ");
-            Console.WriteLine(" ---------------------------------\n");
         }
 
         /// <summary>
@@ -107,12 +113,24 @@ namespace ConsoleAppProject.App01
             return Convert.ToDouble(value);
             // miles = ConsoleHelper.InputNumber("Please enter the number of miles >");
         }
-       
-        private void OutputDestance ()
+        private void OutputDestance()
         {
             Console.WriteLine($"{ fromDistance} { fromUnit} " +
-                $"is {toDistance} { toUnit} !");  
+                $" is {toDistance} { toUnit} !");
         }
+        private void OutputHeading()
+        {
+            Console.WriteLine("\n ---------------------------------");
+            Console.WriteLine("       Distance Converter         ");
+            Console.WriteLine("     by Sudath Nawagamuwage           ");
+            Console.WriteLine(" ---------------------------------\n");
+            
+            //Console.WriteLine(prompt);
+            //Console.WriteLine();
+            
+        }
+
+       
 
     }   
 }
