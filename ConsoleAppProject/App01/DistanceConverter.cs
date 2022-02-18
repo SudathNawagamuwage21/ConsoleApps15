@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleAppProject.Helpers;
+using System;
 namespace ConsoleAppProject.App01
 {
     /// <summary>
@@ -18,103 +19,155 @@ namespace ConsoleAppProject.App01
 
         public const double FEET_IN_METRES = 3.28084;
 
-        public const string FEET = "feet";
-        public const string METRES = "metres";
-        public const string MILES = "miles";
+        //public const string FEET = "feet";
+        //public const string METRES = "metres";
+        //public const string MILES = "miles";
 
         private double fromDistance;
         private double toDistance;
 
-        private string fromUnit;
-        private string toUnit;
+        private DistanceUnits fromUnit;
+        private DistanceUnits toUnit;
 
+        //private string fromUnit;
+        //private string toUnit;
+
+        /// <summary>
+        /// Set a constructer to set the default value. 
+        /// </summary>
         public DistanceConverter()
         {
-            fromUnit = MILES;
-            toUnit = FEET;
+            fromUnit = DistanceUnits.Miles;
+            toUnit = DistanceUnits.Feet;
+
+            //fromUnit = MILES;
+            //toUnit = FEET;
         }
 
+        /// <summary>
+        /// In this method ask the user to input the didtance and distance unit and 
+        /// calculate the sane distance in unnit.
+        /// </summary>
         public void ConvertDistance()
         {
-            OutputHeading();
+            ConsoleHelper.OutputHeading("Distance Converter");
 
-            fromUnit = SelectUnit (" Please select the from distamce unit > ");
+            fromUnit = SelectUnit ($" Please select the from distamce unit > ");
 
             toUnit = SelectUnit(" Please select the to distance unit > ");
 
             Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
 
-            fromDistance = InputDistance($" Please enter the number of {fromUnit} >");
-            
+            fromDistance = ConsoleHelper.InputNumber($" Please enter the number of {fromUnit} >");
+
+            //fromDistance = InputDistance($" Please enter the number of {fromUnit} >");
+
             CalculateDistance();
 
             OutputDestance();
         }
 
+        /// <summary>
+        /// Caculating the distance form unit value.
+        /// </summary>
         private void CalculateDistance()
         {
-            if (fromUnit == MILES & toUnit == FEET)
+            if (fromUnit == DistanceUnits.Miles & toUnit == DistanceUnits.Feet)
             {
                 toDistance = fromDistance * FEET_IN_MILES;
             }
-            else if (fromUnit == FEET & toUnit == MILES)
+            else if (fromUnit == DistanceUnits.Feet & toUnit == DistanceUnits.Miles)
             {
                 toDistance = fromDistance / FEET_IN_MILES;
             }
-            else if (fromUnit == MILES & toUnit == METRES)
-            {
-                toDistance = fromDistance * METRES_IN_MILES;
-            }
-            else if (fromUnit == METRES & toUnit == MILES)
-            {
-                toDistance = fromDistance / METRES_IN_MILES;
-            }
-            else if (fromUnit == METRES & toUnit == FEET)
-            {
-                toDistance = fromDistance * FEET_IN_METRES;
-            }
-            else if (fromUnit == FEET & toUnit == METRES)
-            {
-                toDistance = fromDistance / FEET_IN_METRES;
-            }
+            //if (fromUnit == MILES & toUnit == FEET)
+            //{
+            //    toDistance = fromDistance * FEET_IN_MILES;
+            //}
+            //else if (fromUnit == FEET & toUnit == MILES)
+            //{
+            //    toDistance = fromDistance / FEET_IN_MILES;
+            //}
+            //else if (fromUnit == MILES & toUnit == METRES)
+            //{
+            //    toDistance = fromDistance * METRES_IN_MILES;
+            //}
+            //else if (fromUnit == METRES & toUnit == MILES)
+            //{
+            //    toDistance = fromDistance / METRES_IN_MILES;
+            //}
+            //else if (fromUnit == METRES & toUnit == FEET)
+            //{
+            //    toDistance = fromDistance * FEET_IN_METRES;
+            //}
+            //else if (fromUnit == FEET & toUnit == METRES)
+            //{
+            //    toDistance = fromDistance / FEET_IN_METRES;
+            //}
         }
 
+        /// <summary>
+        /// 
+        /// 
+        /// </summary>
         private string SelectUnit(string prompt)
         {
-            string choice = DisplayChoices(prompt);
-            
+           // string choice = DisplayChoices(prompt);
             string unit = ExecuteChoice(choice);
             Console.WriteLine($"\n You have chosen {unit}");
             return unit;
         }
         private static string ExecuteChoice(string choice)
         {
-            //string unit = "INVALID CHOISE";
+            switch (choice)
+            {
+                case "1": unit = DistanceUnits.Feet; break;
+                case "2": unit = DistanceUnits.Metres; break;
+                case "3": unit = DistanceUnits.Miles; break;
+                default: unit = DistanceUnits.NoUnit; break;
+            }
+            if (unit == DistanceUnits.NoUnit)
+            {
+                Console.WriteLine("Invalid Choice");
+                Console.WriteLine("Must be digit i to 3");
+            }
+            return unit;
 
-            if (choice == "1")
-            {
-                return FEET;
-            }
-            else if (choice == "2")
-            {
-                return METRES;
-            }
-            else if (choice == "3")
-            {
-                return MILES;
-            }
-
-            //Console.WriteLine($"\n You have chosen {unit}");
-            //return unit;
-            return null;
         }
+        //private static string ExecuteChoice(string choice)
+        //{
+        //    string unit = "INVALID CHOISE";
 
-        private static string DisplayChoices(string prompt)
+        //    if (choice == "1")
+        //    {
+        //        return FEET;
+        //    }
+        //    else if (choice == "2")
+        //    {
+        //        return METRES;
+        //    }
+        //    else if (choice == "3")
+        //    {
+        //        return MILES;
+        //    }
+
+        //    Console.WriteLine($"\n You have chosen {unit}");
+        //    return unit;
+        //    // return null;
+        //}
+
+    /// <summary>
+    /// Display the menu of distance and then prompt
+    /// user to select one and return it.
+    /// </summary>
+    private DistanceUnits SelectUnit(string prompt)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
             Console.WriteLine();
-            Console.WriteLine($" 1. {FEET}");
-            Console.WriteLine($" 2. {METRES}");
-            Console.WriteLine($" 3. {MILES}");
+            Console.WriteLine($" 1. {DistanceUnits.Feet}");
+            Console.WriteLine($" 2. {DistanceUnits.Metres}");
+            Console.WriteLine($" 3. {DistanceUnits.Miles}");
             Console.WriteLine();
 
             Console.Write(prompt);
@@ -123,8 +176,8 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// Prompt the user to enter the distance in miles
-        /// Input number as a double number
+        /// Prompt the user to enter the distance in unit value
+        /// Input number as a double number.
         /// </summary>        
         private double InputDistance(string prompt)
         {
@@ -138,19 +191,18 @@ namespace ConsoleAppProject.App01
             Console.WriteLine($"\n { fromDistance} { fromUnit} " +
                 $" is { toDistance} { toUnit} !\n");
         }
-        private void OutputHeading()
-        {
-            Console.WriteLine("\n ---------------------------------");
-            Console.WriteLine("       Distance Converter         ");
-            Console.WriteLine("     by Sudath Nawagamuwage           ");
-            Console.WriteLine(" ---------------------------------\n");
-            
-            //Console.WriteLine(prompt);
-            //Console.WriteLine();
-            
-        }
+        /// <summary>
+        /// Output the short discription of the apllication and 
+        /// print the name of the author.
+        /// </summary>
+        //private void OutputHeading()
+        //{
+        //    Console.ForegroundColor = ConsoleColor.Green;
 
-       
-
+        //    Console.WriteLine("\n ---------------------------------");
+        //    Console.WriteLine("       Distance Converter         ");
+        //    Console.WriteLine("     by Sudath Nawagamuwage           ");
+        //    Console.WriteLine(" ---------------------------------\n");
+        //}
     }   
 }
