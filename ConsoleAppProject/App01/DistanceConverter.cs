@@ -20,9 +20,9 @@ namespace ConsoleAppProject.App01
         public const double FEET_IN_METRES = 3.28084;
 
         public string[] UnitChoices = {
-            DistanceUnits.Miles.ToString(),
-            DistanceUnits.Metres.ToString(),
             DistanceUnits.Feet.ToString(),
+            DistanceUnits.Metres.ToString(),
+            DistanceUnits.Miles.ToString(),
         };
 
         private double fromDistance;
@@ -42,8 +42,6 @@ namespace ConsoleAppProject.App01
             fromUnit = DistanceUnits.Miles;
             toUnit = DistanceUnits.Feet;
 
-            //fromUnit = MILES;
-            //toUnit = FEET;
         }
 
         /// <summary>
@@ -53,8 +51,9 @@ namespace ConsoleAppProject.App01
         public void ConvertDistance()
         {
             ConsoleHelper.OutputHeading("Distance Converter");
-            toUnit = SelectUnit("to");
             fromUnit = SelectUnit("from");
+            toUnit = SelectUnit("to");
+            
 
             Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
 
@@ -126,7 +125,6 @@ namespace ConsoleAppProject.App01
 
             // return null;
         }
-
         private void OutputDestance()
         {
             Console.WriteLine($"\n { fromDistance} { fromUnit} " +
