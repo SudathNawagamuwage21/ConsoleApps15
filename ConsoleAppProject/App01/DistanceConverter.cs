@@ -19,16 +19,11 @@ namespace ConsoleAppProject.App01
 
         public const double FEET_IN_METRES = 3.28084;
 
-        public string [] UnitChoices = {
-            DistanceUnits.Miles.ToString(), 
-            DistanceUnits.Metres.ToString(), 
+        public string[] UnitChoices = {
+            DistanceUnits.Miles.ToString(),
+            DistanceUnits.Metres.ToString(),
             DistanceUnits.Feet.ToString(),
         };
-
-
-        //public const string FEET = "feet";
-        //public const string METRES = "metres";
-        //public const string MILES = "miles";
 
         private double fromDistance;
         private double toDistance;
@@ -109,10 +104,6 @@ namespace ConsoleAppProject.App01
             }
         }
 
-        /// <summary>
-        /// 
-        /// 
-        
         private static DistanceUnits ExecuteChoice(int choice)
         {
             string unit = "INVALID CHOISE";
