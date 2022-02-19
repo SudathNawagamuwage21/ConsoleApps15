@@ -186,20 +186,9 @@ namespace ConsoleAppProject.App01
         //    Console.Write(prompt);
         //    string choice = Console.ReadLine();
         //    return ExecuteChoice(choice);
-            
+
         //}
 
-        /// <summary>
-        /// Prompt the user to enter the distance in unit value
-        /// Input number as a double number.
-        /// </summary>        
-        //private double InputDistance(string prompt)
-        //{
-        //    Console.WriteLine(prompt);
-        //    string value = Console.ReadLine();
-        //    return Convert.ToDouble(value);
-        //    // miles = ConsoleHelper.InputNumber("Please enter the number of miles >");
-        //}
         private void OutputDestance()
         {
             Console.WriteLine($"\n { fromDistance} { fromUnit} " +
