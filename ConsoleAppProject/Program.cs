@@ -15,11 +15,19 @@ namespace ConsoleAppProject
     /// </summary>
     public static class Program
     {
+        public static DistanceConverter DistanceConverter
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            
-            Console.WriteLine("BNU CO453 Applications Programming 2021-2022!");
+            ConsoleHelper.OutputHeading("BNU CO453 Applications Programming 2021-2022!");
+           // Console.WriteLine("BNU CO453 Applications Programming 2021-2022!");
             Console.WriteLine();
             Console.Beep();
 

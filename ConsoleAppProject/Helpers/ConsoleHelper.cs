@@ -104,7 +104,7 @@ namespace ConsoleAppProject.Helpers
                 if (number < min || number > max)
                 {
                     isValid = false;
-                    Console.WriteLine($"Number must be between {min} and {max}");
+                    Console.WriteLine($"\n Number must be between {min} and {max}");
                 }
                 else isValid = true;
 

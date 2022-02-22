@@ -31,9 +31,6 @@ namespace ConsoleAppProject.App01
         private DistanceUnits fromUnit;
         private DistanceUnits toUnit;
 
-        //private string fromUnit;
-        //private string toUnit;
-
         /// <summary>
         /// Set a constructer to set the default value. 
         /// </summary>
@@ -42,6 +39,14 @@ namespace ConsoleAppProject.App01
             fromUnit = DistanceUnits.Miles;
             toUnit = DistanceUnits.Feet;
 
+        }
+
+        public DistanceUnits DistanceUnits
+        {
+            get => default;
+            set
+            {
+            }
         }
 
         /// <summary>
