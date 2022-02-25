@@ -46,7 +46,7 @@ namespace ConsoleAppProject
             }
             else if (choiceNo == 2)
             {
-                calculator.CalculateIndex();
+               calculator.CalculaterIndex();
             }
            // else Console.WriteLine("Invalid Choice!");
          }
