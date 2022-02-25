@@ -22,7 +22,7 @@ namespace ConsoleAppProject.App02
     public class BMI
     {
         public const double UnderWeight = 18.5;
-        public const double NormalRagnge = 24.9;
+        public const double NormalRange = 24.9;
         public const double OverWeight = 29.9;
 
         public const double ObeseLevel1 = 34.9;
@@ -132,7 +132,21 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private void OutputHealthMessage()
         {
-            throw new NotImplementedException();
+            if (index < UnderWeight)
+            {
+                Console.WriteLine($" Your BMI is {index}, " +
+                    $"You are underweight! ");
+            }
+            else if (index <= NormalRange)
+            {
+                Console.WriteLine($" Your BMI is {index}, " +
+                    $"You are in the normal range! ");
+            }
+            else if (index <= OverWeight)
+            {
+                Console.WriteLine($" Your BMI is {index}, " +
+                    $"You are overweight! ");
+            }
         }
     }
 
