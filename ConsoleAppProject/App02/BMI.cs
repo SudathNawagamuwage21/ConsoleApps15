@@ -3,14 +3,7 @@ using System;
 
 namespace ConsoleAppProject.App02
 {
-    /// <summary>
-    /// Two unit systems measuring weight and height
-    /// </summary>
-    public enum UnitSystem
-    {
-        Metric,
-        Imperial
-    }
+    
     /// <summary>
     /// This class contains for the calculating 
     /// the use's MBI (Body Mass Index) using
