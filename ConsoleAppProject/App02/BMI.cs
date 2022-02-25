@@ -147,6 +147,26 @@ namespace ConsoleAppProject.App02
                 Console.WriteLine($" Your BMI is {index}, " +
                     $"You are overweight! ");
             }
+
+            OutputBameMessage();
+        }
+        /// <summary>
+        /// Output a message for BAME users who are
+        /// at higher risk
+        /// </summary>
+        private void OutputBameMessage()
+        {
+            Console.WriteLine();
+            Console.WriteLine(
+                " If you are Black, Asian or other minority");
+            Console.WriteLine(
+                " ethnic groups, you have a higher risk");
+            Console.WriteLine();
+            Console.WriteLine(
+                "\t Adults 23.0 or more are at increased risk");
+            Console.WriteLine(
+                "\t Adults 27.5 or more are at high risk");
+            Console.WriteLine();
         }
     }
 
