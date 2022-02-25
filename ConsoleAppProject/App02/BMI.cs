@@ -94,7 +94,23 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private void InputImperialDetails()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(
+                " Enter your height in feet and inches ");
+            double feet = ConsoleHelper.InputNumber(
+                "\n Enter your height in feet > ");
+            inches = (int)ConsoleHelper.InputNumber(
+                " Enter your height in inches > ");
+
+            inches += (int)feet * InchesInFeet;
+
+            Console.WriteLine(
+                " Enter your weight in stones and pounds");
+            double stones = ConsoleHelper.InputNumber(
+                " Enter your weight in stones > ");
+            pounds = ConsoleHelper.InputNumber(
+                " Enter your weight in pounds > ");
+
+            pounds += stones * PoundsInStones;
         }
 
         /// <summary>
@@ -103,7 +119,11 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private void InputMetricDetails()
         {
-            throw new NotImplementedException();
+            metres = ConsoleHelper.InputNumber(
+                 " \n Enter your height in metres > ");
+
+            kilograms = ConsoleHelper.InputNumber(
+                " Enter your weight in kilograms > ");
         }
 
         /// <summary>
