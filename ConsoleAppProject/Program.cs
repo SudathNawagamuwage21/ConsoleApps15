@@ -1,4 +1,5 @@
 ﻿using ConsoleAppProject.App01;
+using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.Helpers;
 using System;
@@ -15,6 +16,12 @@ namespace ConsoleAppProject
     /// </summary>
     public static class Program
     {
+        private static DistanceConverter Converter = new DistanceConverter();
+
+        private static BMI calculator = new BMI();
+        /// <summary>
+        /// class diagram code
+        /// </summary>
         public static DistanceConverter DistanceConverter
         {
             get => default;
@@ -22,21 +29,26 @@ namespace ConsoleAppProject
             {
             }
         }
-
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
+
             ConsoleHelper.OutputHeading("BNU CO453 Applications Programming 2021-2022!");
-           // Console.WriteLine("BNU CO453 Applications Programming 2021-2022!");
             Console.WriteLine();
             Console.Beep();
-
-            DistanceConverter converter = new DistanceConverter();
-            converter.ConvertDistance();
-            //converter.FeetToMiles();
-            //converter.MilesToMetres();
             
+            string[] choices = { "Distance Converter", "BMI Calculator", "Quit" };
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
 
-        }
+            if (choiceNo == 1)
+            {
+                Converter.ConvertDistance();
+            }
+            else if (choiceNo == 2)
+            {
+                calculator.CalculateIndex();
+            }
+           // else Console.WriteLine("Invalid Choice!");
+         }
     }
 }

@@ -1,12 +1,20 @@
-﻿namespace ConsoleAppProject.App02
+﻿using System;
+
+namespace ConsoleAppProject.App02
 {
     /// <summary>
-    /// Please describe the main features of this App
+    /// This class contains for the calculating 
+    /// the use's MBI (Body Mass Index) using
+    /// imprial or metric Units
     /// </summary>
     /// <author>
-    /// Student Name version 0.1
+    /// sudath nawagamuwage version 0.1
     /// </author>
     public class BMI
     {
+        internal void CalculateIndex()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
