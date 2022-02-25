@@ -41,6 +41,9 @@ namespace ConsoleAppProject.App01
 
         }
 
+        /// <summary>
+        /// class diagram method
+        /// </summary>
         public DistanceUnits DistanceUnits
         {
             get => default;
@@ -48,7 +51,7 @@ namespace ConsoleAppProject.App01
             {
             }
         }
-
+        
         /// <summary>
         /// In this method ask the user to input the didtance and distance unit and 
         /// calculate the sane distance in unnit.
@@ -69,6 +72,9 @@ namespace ConsoleAppProject.App01
             OutputDestance();
         }
 
+        /// <summary>
+        /// Prompt the users to select the distance their setected
+        /// </summary>
         private DistanceUnits SelectUnit(string toOrFrom)
         {
             Console.WriteLine($" Please select the {toOrFrom} distamce unit > ");
@@ -108,6 +114,10 @@ namespace ConsoleAppProject.App01
             }
         }
 
+        /// <summary>
+        /// Prompt the user to select feet, Metres and Miles
+        /// for entering their choice of destance
+        /// </summary>
         private static DistanceUnits ExecuteChoice(int choice)
         {
             string unit = "INVALID CHOISE";
@@ -130,6 +140,11 @@ namespace ConsoleAppProject.App01
 
             // return null;
         }
+
+        /// <summary>
+        /// Output a message for distance the users who are
+        /// seleceted 
+        /// </summary>
         private void OutputDestance()
         {
             Console.WriteLine($"\n { fromDistance} { fromUnit} " +
