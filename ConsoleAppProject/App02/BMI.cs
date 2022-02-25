@@ -51,7 +51,7 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void CalculaterIndex()
         {
-            ConsoleHelper.OutputHeading("Body Mass Index Calculator");
+            ConsoleHelper.OutputHeading("     Body Mass Index Calculator");
             UnitSystem unitSystem = SelectUnits();
 
             if (unitSystem == UnitSystem.Metric)
@@ -74,7 +74,18 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private UnitSystem SelectUnits()
         {
-            throw new NotImplementedException();
+            string[] choices = new[]
+            {
+                "Metric Units",
+                "Imperial Units"
+            };
+            int choice = ConsoleHelper.SelectChoice(choices);
+
+            if (choice == 1)
+            {
+                return UnitSystem.Metric;
+            }
+            else return UnitSystem.Imperial;
         }
 
         /// <summary>
