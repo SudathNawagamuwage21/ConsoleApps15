@@ -58,7 +58,7 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void ConvertDistance()
         {
-            ConsoleHelper.OutputHeading("Distance Converter");
+            ConsoleHelper.OutputHeading("\t \tDistance Converter");
             fromUnit = SelectUnit("from");
             toUnit = SelectUnit("to");
             

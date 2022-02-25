@@ -44,7 +44,7 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void CalculaterIndex()
         {
-            ConsoleHelper.OutputHeading("     Body Mass Index Calculator");
+            ConsoleHelper.OutputHeading("\t\tBody Mass Index Calculator");
             UnitSystem unitSystem = SelectUnits();
 
             if (unitSystem == UnitSystem.Metric)
