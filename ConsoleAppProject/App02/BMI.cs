@@ -140,6 +140,22 @@ namespace ConsoleAppProject.App02
                 Console.WriteLine($" Your BMI is {index}, " +
                     $"You are overweight! ");
             }
+            else if (index <= ObeseLevel1)
+            {
+                Console.WriteLine($" Your BMI is {index}, " +
+                    $"You are obese class I ");
+            }
+            else if (index <= ObeseLevel2)
+            {
+                Console.WriteLine($" Your BMI is {index}, " +
+                    $"You are obese class II ");
+            }
+            else if (index <= ObeseLevel3)
+            {
+                Console.WriteLine($" Your BMI is {index}, " +
+                    $"You are obese class III ");
+
+            }
 
             OutputBameMessage();
         }
