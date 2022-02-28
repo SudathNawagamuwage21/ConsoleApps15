@@ -88,20 +88,22 @@ namespace ConsoleAppProject.App02
         private void InputImperialDetails()
         {
             Console.WriteLine(
-                " Enter your height in feet and inches ");
+                " Enter your height to nearrest feet and inches ");
             double feet = ConsoleHelper.InputNumber(
                 "\n Enter your height in feet > ");
             inches = (int)ConsoleHelper.InputNumber(
                 " Enter your height in inches > ");
+            Console.WriteLine();
 
             inches += (int)feet * InchesInFeet;
 
             Console.WriteLine(
-                " Enter your weight in stones and pounds");
+                " Enter your weight to the nearest stones and pounds");
             double stones = ConsoleHelper.InputNumber(
                 " Enter your weight in stones > ");
             pounds = ConsoleHelper.InputNumber(
                 " Enter your weight in pounds > ");
+            Console.WriteLine();
 
             pounds += stones * PoundsInStones;
         }
@@ -117,6 +119,7 @@ namespace ConsoleAppProject.App02
 
             kilograms = ConsoleHelper.InputNumber(
                 " Enter your weight in kilograms > ");
+            Console.WriteLine();
         }
 
         /// <summary>
