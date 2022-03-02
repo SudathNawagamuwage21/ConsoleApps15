@@ -19,11 +19,18 @@ namespace ConsoleAppProject.App01
 
         public const double FEET_IN_METRES = 3.28084;
 
-        public string[] UnitChoices = {
-            DistanceUnits.Feet.ToString(),
-            DistanceUnits.Metres.ToString(),
-            DistanceUnits.Miles.ToString(),
-        };
+        //public string[] UnitChoices = {
+        //    DistanceUnits.Feet.ToString(),
+        //    DistanceUnits.Metres.ToString(),
+        //    DistanceUnits.Miles.ToString(),
+        //};
+
+        public const string FEET = "Feet";
+
+        public const string METRES = "Metres";
+        
+        public const string MILES = "Metres";
+
 
         private double fromDistance;
         private double toDistance;
@@ -59,8 +66,10 @@ namespace ConsoleAppProject.App01
         public void ConvertDistance()
         {
             ConsoleHelper.OutputHeading("\t \tDistance Converter");
-            fromUnit = SelectUnit("from");
-            toUnit = SelectUnit("to");
+            //fromUnit = SelectUnit("from");
+            //toUnit = SelectUnit("to");
+            fromUnit = SelectUnit("Please select your from distamce unit >");
+            toUnit = SelectUnit("Please select your to distamce unit >");
             
 
             Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
@@ -71,21 +80,63 @@ namespace ConsoleAppProject.App01
 
             OutputDestance();
         }
+            
 
         /// <summary>
         /// Prompt the users to select the distance their setected
         /// </summary>
-        private DistanceUnits SelectUnit(string toOrFrom)
-        {
-            Console.WriteLine($" Please select the {toOrFrom} distamce unit > ");
-            Console.WriteLine();
-            int choice = ConsoleHelper.SelectChoice(UnitChoices);
-            return ExecuteChoice(choice);
-        }
+        //private DistanceUnits SelectUnit(string toOrFrom)
+        //{
+        //    //Console.WriteLine($" Please select the {toOrFrom} distamce unit > ");
+        //    //Console.WriteLine();
+        //    int choice = ConsoleHelper.SelectChoice(UnitChoices);
+        //    return ExecuteChoice(choice);
+        //}
 
         /// <summary>
         /// Caculating the distance form unit value.
         /// </summary>
+        /// <summary>
+        /// Prompt the user to select feet, Metres and Miles
+        /// for entering their choice of destance
+        /// </summary>
+        //private static DistanceUnits ExecuteChoice(int choice)
+        //{
+            //string unit = "INVALID CHOISE";
+
+        private DistanceUnits SelectUnit(string prompt)
+        {
+            string unit = "INVALID CHOISE";
+
+            string[] choices =
+            {
+                $"{DistanceUnits.Feet}",
+                $"{DistanceUnits.Metres}",
+                $"{DistanceUnits.Miles}",
+            };
+
+            Console.WriteLine($"\n{prompt}");
+
+            int choice = ConsoleHelper.SelectChoice(choices);
+
+            if (choice == 1)
+            {
+                return DistanceUnits.Feet;
+            }
+            else if (choice == 2)
+            {
+                return DistanceUnits.Metres;
+            }
+            else if (choice == 3)
+            {
+                return DistanceUnits.Miles;
+            }
+
+            Console.WriteLine($"\n You have chosen {unit}");
+            return DistanceUnits.NoUnit;
+
+            // return null;
+        }
         private void CalculateDistance()
         {
             if (fromUnit == DistanceUnits.Miles & toUnit == DistanceUnits.Feet)
@@ -113,34 +164,6 @@ namespace ConsoleAppProject.App01
                 toDistance = fromDistance / FEET_IN_METRES;
             }
         }
-
-        /// <summary>
-        /// Prompt the user to select feet, Metres and Miles
-        /// for entering their choice of destance
-        /// </summary>
-        private static DistanceUnits ExecuteChoice(int choice)
-        {
-            string unit = "INVALID CHOISE";
-
-            if (choice == 1)
-            {
-                return DistanceUnits.Feet;
-            }
-            else if (choice == 2)
-            {
-                return DistanceUnits.Metres;
-            }
-            else if (choice == 3)
-            {
-                return DistanceUnits.Miles;
-            }
-
-            Console.WriteLine($"\n You have chosen {unit}");
-            return DistanceUnits.NoUnit;
-
-            // return null;
-        }
-
         /// <summary>
         /// Output a message for distance the users who are
         /// seleceted 
