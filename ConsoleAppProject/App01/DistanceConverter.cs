@@ -87,7 +87,7 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private DistanceUnits SelectUnit(string toOrFrom)
         {
-            Console.WriteLine($" Please select the {toOrFrom} distamce unit > ");
+            Console.WriteLine($" Please select the {toOrFrom} distance unit > ");
             Console.WriteLine();
             int choice = ConsoleHelper.SelectChoice(UnitChoices);
             return ExecuteChoice(choice);
