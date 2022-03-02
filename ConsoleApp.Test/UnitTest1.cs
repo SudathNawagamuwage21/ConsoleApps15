@@ -108,7 +108,7 @@ namespace ConsoleApp.Test
             DistanceConverter converter = new DistanceConverter();
 
             converter.FromUnit = DistanceUnits.Feet;
-            converter.ToUnit = DistanceUnits.Metres;`
+            converter.ToUnit = DistanceUnits.Metres;
 
             converter.FromDistance = 3.28084;
 
