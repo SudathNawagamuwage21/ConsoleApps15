@@ -116,7 +116,11 @@ namespace ConsoleAppProject.App01
 
             // return null;
         }
-         public void CalculateDistance()
+
+        /// <summary>
+        /// Caculating the distance form unit value.
+        /// </summary>
+        public void CalculateDistance()
         {
             if (FromUnit == DistanceUnits.Miles & ToUnit == DistanceUnits.Feet)
             {
