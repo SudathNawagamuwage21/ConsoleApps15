@@ -31,7 +31,6 @@ namespace ConsoleAppProject.App01
         
         public const string MILES = "Metres";
 
-
         public double FromDistance { get; set; }
         public double ToDistance { get; set; }
 
@@ -45,7 +44,6 @@ namespace ConsoleAppProject.App01
         {
             FromUnit = DistanceUnits.Miles;
             ToUnit = DistanceUnits.Feet;
-
         }
 
         /// <summary>
@@ -68,10 +66,7 @@ namespace ConsoleAppProject.App01
             ConsoleHelper.OutputHeading("\t \tDistance Converter");
             FromUnit = SelectUnit("from");
             ToUnit = SelectUnit("to");
-            //FromUnit = SelectUnit("Please select your from distamce unit >");
-            //ToUnit = SelectUnit("Please select your to distamce unit >");
-
-
+            
             Console.WriteLine($"\n Converting {FromUnit} to {ToUnit}");
 
             FromDistance = ConsoleHelper.InputNumber($" Please enter the number of {FromUnit} >");
@@ -80,7 +75,6 @@ namespace ConsoleAppProject.App01
 
             OutputDestance();
         }
-
 
         /// <summary>
         /// Prompt the users to select the distance their setected
@@ -103,22 +97,7 @@ namespace ConsoleAppProject.App01
         private static DistanceUnits ExecuteChoice(int choice)
         {
             string unit = "INVALID CHOISE";
-
-            //private DistanceUnits SelectUnit(string prompt)
-            //{
-            //    string unit = "INVALID CHOISE";
-
-            //    string[] choices =
-            //    {
-            //        $"{DistanceUnits.Feet}",
-            //        $"{DistanceUnits.Metres}",
-            //        $"{DistanceUnits.Miles}",
-            //    };
-
-            //    Console.WriteLine($"\n{prompt}");
-
-            //    int choice = ConsoleHelper.SelectChoice(choices);
-
+           
             if (choice == 1)
             {
                 return DistanceUnits.Feet;
@@ -137,7 +116,7 @@ namespace ConsoleAppProject.App01
 
             // return null;
         }
-        private void CalculateDistance()
+         public void CalculateDistance()
         {
             if (FromUnit == DistanceUnits.Miles & ToUnit == DistanceUnits.Feet)
             {
