@@ -113,12 +113,11 @@ namespace ConsoleAppProject.App01
 
             Console.WriteLine($"\n You have chosen {unit}");
             return DistanceUnits.NoUnit;
-
-            // return null;
+            
         }
 
         /// <summary>
-        /// Caculating the distance form unit value.
+        /// Caculating the distance form unit values.
         /// </summary>
         public void CalculateDistance()
         {

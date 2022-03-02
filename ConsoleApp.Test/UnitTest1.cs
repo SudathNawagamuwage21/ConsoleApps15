@@ -25,5 +25,24 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedDistance, converter.ToDistance);
 
         }
+        [TestMethod]
+        public void TestFeetToMiles()
+        {
+            //Arrange
+            DistanceConverter converter = new DistanceConverter();
+
+            converter.FromUnit = DistanceUnits.Feet;
+            converter.ToUnit = DistanceUnits.Miles;
+
+            converter.FromDistance = 5280;
+
+            //Act
+            converter.CalculateDistance();
+            double expectedDistance = 1;
+
+            //Assert
+            Assert.AreEqual(expectedDistance, converter.ToDistance);
+
+        }
     }
 }
