@@ -1,25 +1,24 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConsoleAppProject.App02;
+using System;
 
-namespace ConsoleApp2.Test
+namespace ConsoleAppUnit.test
 {
     [TestClass]
-    public class TestBmiCaculater
+    public class TestBmiCalculator
     {
         [TestMethod]
-        public void TestUnderWeightLow()
+        public void TestMetricUnderweightLow()
         {
-            BMI Calculater = new BMI();
+            BMI calculator = new BMI();
+            calculator.Kilograms = 45.5;
+            calculator.Centimetres = 193;
+            calculator.CalculateMetricBMI();
 
-            // Calculater.Feet = 0;
-            Calculater.Inches = 8;
-            Calculater.Pounds = 100;
-
-            Calculater.CalculaterIndex();
             double expectedIndex = 12;
 
-            Assert.AreEqual(expectedIndex, Calculater.Index);
-
+            Assert.AreEqual(expectedIndex, calculator.Index);
         }
+
     }
 }
