@@ -77,7 +77,7 @@ namespace ConsoleAppProject.App02
             //OutputHealthMessage();
         }
 
-        private void CalculateImperialBMI()
+        public void CalculateImperialBMI()
         {
             Inches += Feet * InchesInFeet;
             Pounds += Stones * PoundsInStones;
@@ -85,7 +85,7 @@ namespace ConsoleAppProject.App02
             Index = (double) Pounds * 703 / (Inches * Inches);
         }
 
-        private void CalculateMetricBMI()
+        public void CalculateMetricBMI()
         {
             Index = Kilograms / (metres * metres);
         }

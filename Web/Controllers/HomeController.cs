@@ -21,9 +21,27 @@ namespace Web.Controllers
             return View(converter);
         }
     
-        public IActionResult BmiCalculator()
+        public IActionResult BmiCalculator(BMI bmi)
         {
-            return View();
+            if (bmi.Centimetres > 140)
+            {
+                bmi.CalculateMetricBMI();
+            }
+            else if (bmi.Feet > 4 && bmi.Stones > 6)
+            {
+                bmi.CalculateImperialBMI();
+            }
+            else
+            {
+                ViewBag.Error = "You have entered values too small for any adult!";
+                return View();
+            }
+            double bmiIndex = bmi.Index;
+            return RedirectToAction("HealthMessage", new { bmiIndex });
+        }
+        public IActionResult HealthMessage(double Index)
+        {
+            return View(Index);
         }
 
         public IActionResult Privacy()
