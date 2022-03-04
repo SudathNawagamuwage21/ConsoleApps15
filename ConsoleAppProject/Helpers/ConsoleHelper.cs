@@ -30,8 +30,9 @@ namespace ConsoleAppProject.Helpers
 
             // Get the user's choice
 
-            int choiceNo = (int)InputNumber("\n Please enter your choice > ", 
+            int choiceNo = (int)InputNumber("\n Please enter your choice > ",
                                             1, choices.Length);
+            // Console.WriteLine();
             return choiceNo;
         }
 
@@ -103,7 +104,7 @@ namespace ConsoleAppProject.Helpers
                 if (number < min || number > max)
                 {
                     isValid = false;
-                    Console.WriteLine($"Number must be between {min} and {max}");
+                    Console.WriteLine($"\n Number must be between {min} and {max}");
                 }
                 else isValid = true;
 
@@ -123,10 +124,10 @@ namespace ConsoleAppProject.Helpers
         {
             Console.ForegroundColor = ConsoleColor.Green;
 
-            Console.WriteLine("\n ---------------------------------");
-            Console.WriteLine($"        {heading}          ");
-            Console.WriteLine("     by Sudath Nawagamuwage           ");
-            Console.WriteLine(" ---------------------------------" +
+            Console.WriteLine("\n ----------------------------------------------------");
+            Console.WriteLine($"       {heading}                         ");
+            Console.WriteLine("                by Sudath Nawagamuwage           ");
+            Console.WriteLine(" ----------------------------------------------------" +
                 "\n");
 
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -143,7 +144,7 @@ namespace ConsoleAppProject.Helpers
             Console.WriteLine($"\n {title}");
             Console.Write(" ");
 
-            for(int count = 0; count <= title.Length; count++)
+            for (int count = 0; count <= title.Length; count++)
             {
                 Console.Write("-");
             }
