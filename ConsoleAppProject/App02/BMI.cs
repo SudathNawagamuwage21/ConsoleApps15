@@ -25,17 +25,18 @@ namespace ConsoleAppProject.App02
         public const int InchesInFeet = 12;
         public const int PoundsInStones = 14;
 
-        public double Index;
+        public double Index { get; set; }
 
         // Metric Details
 
-        public double Kilograms;
-        public double Metres;
+        public double Kilograms { get; set; }
+        public double Metres { get; set; }
+        public double Feet { get; set; }
 
         // Imperial Details
 
-        public double Pounds;
-        public int Inches;
+        public double Pounds { get; set; }
+        public int Inches { get; set; }
 
         /// <summary>
         /// Prompt the user to select Imperial or Matric units.
@@ -89,13 +90,13 @@ namespace ConsoleAppProject.App02
         {
             Console.WriteLine(
                 " Enter your height to nearrest feet and inches ");
-            double feet = ConsoleHelper.InputNumber(
+            double Feet = ConsoleHelper.InputNumber(
                 "\n Enter your height in feet > ");
             Inches = (int)ConsoleHelper.InputNumber(
                 " Enter your height in inches > ");
             Console.WriteLine();
 
-            Inches += (int)feet * InchesInFeet;
+            Inches += (int)Feet * InchesInFeet;
 
             Console.WriteLine(
                 " Enter your weight to the nearest stones and pounds");
