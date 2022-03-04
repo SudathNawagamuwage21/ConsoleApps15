@@ -25,17 +25,17 @@ namespace ConsoleAppProject.App02
         public const int InchesInFeet = 12;
         public const int PoundsInStones = 14;
 
-        private double index;
+        public double Index;
 
         // Metric Details
 
-        private double kilograms;
-        private double metres;
+        public double Kilograms;
+        public double Metres;
 
         // Imperial Details
 
-        private double pounds;
-        private int inches;
+        public double Pounds;
+        public int Inches;
 
         /// <summary>
         /// Prompt the user to select Imperial or Matric units.
@@ -50,12 +50,12 @@ namespace ConsoleAppProject.App02
             if (unitSystem == UnitSystem.Metric)
             {
                 InputMetricDetails();
-                index = kilograms / (metres * metres);
+                Index = Kilograms / (Metres * Metres);
             }
             else
             {
                 InputImperialDetails();
-                index = pounds * 703 / (inches * inches);
+                Index = Pounds * 703 / (Inches * Inches);
             }
 
             OutputHealthMessage();
@@ -91,21 +91,21 @@ namespace ConsoleAppProject.App02
                 " Enter your height to nearrest feet and inches ");
             double feet = ConsoleHelper.InputNumber(
                 "\n Enter your height in feet > ");
-            inches = (int)ConsoleHelper.InputNumber(
+            Inches = (int)ConsoleHelper.InputNumber(
                 " Enter your height in inches > ");
             Console.WriteLine();
 
-            inches += (int)feet * InchesInFeet;
+            Inches += (int)feet * InchesInFeet;
 
             Console.WriteLine(
                 " Enter your weight to the nearest stones and pounds");
             double stones = ConsoleHelper.InputNumber(
                 " Enter your weight in stones > ");
-            pounds = ConsoleHelper.InputNumber(
+            Pounds = ConsoleHelper.InputNumber(
                 " Enter your weight in pounds > ");
             Console.WriteLine();
 
-            pounds += stones * PoundsInStones;
+            Pounds += stones * PoundsInStones;
         }
 
         /// <summary>
@@ -114,10 +114,10 @@ namespace ConsoleAppProject.App02
         /// </summary>
         private void InputMetricDetails()
         {
-            metres = ConsoleHelper.InputNumber(
+            Metres = ConsoleHelper.InputNumber(
                  " \n Enter your height in metres > ");
 
-            kilograms = ConsoleHelper.InputNumber(
+            Kilograms = ConsoleHelper.InputNumber(
                 " Enter your weight in kilograms > ");
             Console.WriteLine();
         }
@@ -126,36 +126,36 @@ namespace ConsoleAppProject.App02
         /// output the users MBI and their weight category 
         /// from underweight to obese
         /// </summary>
-        private void OutputHealthMessage()
+        public void OutputHealthMessage()
         {
-            if (index < UnderWeight)
+            if (Index < UnderWeight)
             {
-                Console.WriteLine($" Your BMI is {index}, " +
+                Console.WriteLine($" Your BMI is {Index}, " +
                     $"You are underweight! ");
             }
-            else if (index <= NormalRange)
+            else if (Index <= NormalRange)
             {
-                Console.WriteLine($" Your BMI is {index}, " +
+                Console.WriteLine($" Your BMI is {Index}, " +
                     $"You are in the normal range! ");
             }
-            else if (index <= OverWeight)
+            else if (Index <= OverWeight)
             {
-                Console.WriteLine($" Your BMI is {index}, " +
+                Console.WriteLine($" Your BMI is {Index}, " +
                     $"You are overweight! ");
             }
-            else if (index <= ObeseLevel1)
+            else if (Index <= ObeseLevel1)
             {
-                Console.WriteLine($" Your BMI is {index}, " +
+                Console.WriteLine($" Your BMI is {Index}, " +
                     $"You are obese class I ");
             }
-            else if (index <= ObeseLevel2)
+            else if (Index <= ObeseLevel2)
             {
-                Console.WriteLine($" Your BMI is {index}, " +
+                Console.WriteLine($" Your BMI is {Index}, " +
                     $"You are obese class II ");
             }
-            else if (index <= ObeseLevel3)
+            else if (Index <= ObeseLevel3)
             {
-                Console.WriteLine($" Your BMI is {index}, " +
+                Console.WriteLine($" Your BMI is {Index}, " +
                     $"You are obese class III ");
 
             }
