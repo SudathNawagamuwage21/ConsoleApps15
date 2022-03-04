@@ -17,6 +17,14 @@ namespace Web.Controllers
         {
             return View();
         }
+        public IActionResult DistanceConverter()
+        {
+            return View();
+        }
+        public IActionResult BmiCalculator()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
