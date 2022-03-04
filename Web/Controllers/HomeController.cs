@@ -1,26 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Web.Models;
+using ConsoleAppProject.App02;
+using ConsoleAppProject.App01;
 
 namespace Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult DistanceConverter()
+        public IActionResult DistanceConverter(DistanceConverter converter)
         {
-            return View();
+            if (converter.FromDistance > 0)
+            {
+                converter.CalculateDistance();
+            }
+            return View(converter);
         }
+    
         public IActionResult BmiCalculator()
         {
             return View();
