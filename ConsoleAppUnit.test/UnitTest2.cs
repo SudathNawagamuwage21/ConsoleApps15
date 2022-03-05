@@ -19,6 +19,17 @@ namespace ConsoleAppUnit.test
 
             Assert.AreEqual(expectedIndex, calculator.Index);
         }
+        [TestMethod]
+        public void TestImprielUnderweightLow()
+        {
+            BMI calculator = new BMI();
+            calculator.Pounds = 145;
+            calculator.Inches = 72;
+            calculator.CalculateImperialBMI();
 
+            double expectedIndex = 12;
+
+            Assert.AreEqual(expectedIndex, calculator.Index);
+        }
     }
 }

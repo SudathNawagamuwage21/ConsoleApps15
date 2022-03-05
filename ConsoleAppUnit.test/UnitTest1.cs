@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConsoleAppProject.App01;
 
-namespace ConsoleApp.Test
+namespace ConsoleAppUnit.Test
 {
     [TestClass]
     public class TestDistanceConverter
