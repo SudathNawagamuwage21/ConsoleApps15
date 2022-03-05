@@ -12,6 +12,7 @@ namespace Web.Controllers
         {
             return View();
         }
+        
         public IActionResult DistanceConverter(DistanceConverter converter)
         {
             if (converter.FromDistance > 0)
@@ -20,7 +21,13 @@ namespace Web.Controllers
             }
             return View(converter);
         }
-    
+        [HttpGet]
+        public IActionResult BmiCalculator()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult BmiCalculator(BMI bmi)
         {
             if (bmi.Centimetres > 140)
@@ -37,11 +44,12 @@ namespace Web.Controllers
                 return View();
             }
             double bmiIndex = bmi.Index;
-            return RedirectToAction("HealthMessage", new { bmiIndex });
+            return RedirectToAction("HealthMessage", new { bmiIndex});
         }
-        public IActionResult HealthMessage(double Index)
+        
+        public IActionResult HealthMessage(double bmiIndex)
         {
-            return View(Index);
+            return View(bmiIndex);
         }
 
         public IActionResult Privacy()

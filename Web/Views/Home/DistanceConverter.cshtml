@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "SN Distance Converter";
 }
-<header class="text-center jumbotrom justify-content-center">
+<header class="text-center h-100 p-5 bg-light border rounded-3  ">
     <h1>Distance Converter</h1>
     <h2>by Sudath Nawagamuwage</h2>
 
@@ -42,7 +42,8 @@
     <p>
         @if (Model.FromDistance == 0)
         {
-            <input type="text" asp-for="@Model.ToDistance" value="" placeholder="To Distance" readonly />
+            <input type="text" asp-for="@Model.ToDistance" value=""
+                         placeholder="To Distance" readonly />
         }
         else
         {

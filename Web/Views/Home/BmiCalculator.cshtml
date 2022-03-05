@@ -3,7 +3,7 @@
     ViewData["Title"] = "SN BMI Calculator";
 }
 
-<header class="jumbotron">
+<header class="text-center h-100 p-5 bg-light border rounded-3 ">
     <h1>BMI Calculator</h1>
     <h2>by Sudath Nawagamuwage</h2>
 
@@ -21,8 +21,13 @@
             using metric or imperial units.
         </p>
         <p>
-        <input type="number" placeholder="Centimetres" asp-for="@Model.Centimetres"/>
-        </p>
+            <input type="number" placeholder="Feet" value="6" asp-for="@Model.Feet"/>
+            <input type="number" placeholder="Inches" value="0" asp-for="@Model.Inches"/>
+            
+         </p>
+         <p>
+             <input type="number" placeholder="Centimetres" asp-for="@Model.Centimetres"/>
+         </p>
 
         <h2>Weight</h2>
         <p>
@@ -30,11 +35,11 @@
             using metric or imperial units
         </p>
         <p>
-            <input type="number" placeholder="Stones" value="" asp-for="@Model.Stones"/>
-            <input type="number" placeholder="Pounds" value="" asp-for="@Model.Pounds"/>
+            <input type="number" placeholder="Stones" value="11" asp-for="@Model.Stones"/>
+            <input type="number" placeholder="Pounds" value="5" asp-for="@Model.Pounds"/>
         </p>
         <p>
-            <input type="number" placeholder="Kilograms" value="" asp-for="@Model.Kilograms"/>
+            <input type="number" placeholder="Kilograms" asp-for="@Model.Kilograms"/>
         </p>
         <p>
             <button class="btn btn-success" type="submit">Calculate</button>
