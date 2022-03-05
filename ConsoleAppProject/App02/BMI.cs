@@ -182,7 +182,6 @@ namespace ConsoleAppProject.App02
             {
                 massage.Append($" Your BMI is {Index:0.00}, " +
                     $"You are obese class III ");
-
             }
 
             return massage.ToString();
