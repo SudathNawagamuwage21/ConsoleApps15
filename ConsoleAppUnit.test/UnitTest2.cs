@@ -8,7 +8,7 @@ namespace ConsoleAppUnit.test
     public class TestBmiCalculator
     {
         [TestMethod]
-        public void TestMetricUnderweightLow()
+        public void TestMetricUnderweight()
         {
             BMI calculator = new BMI();
             calculator.Kilograms = 45.5;
@@ -20,7 +20,7 @@ namespace ConsoleAppUnit.test
             Assert.AreEqual(expectedIndex, calculator.Index);
         }
         [TestMethod]
-        public void TestImprielUnderweightLow()
+        public void TestImeriallUnderweight()
         {
             BMI calculator = new BMI();
             calculator.Pounds = 145;

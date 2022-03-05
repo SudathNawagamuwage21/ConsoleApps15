@@ -195,12 +195,12 @@ namespace ConsoleAppProject.App02
         {
             StringBuilder massage = new StringBuilder("\n");
 
-
             massage.Append(" If you are Black, Asian or other minority");
             massage.Append(" ethnic groups, you have a higher risk");
             massage.Append("\n");
             massage.Append("\t Adults 23.0 or more are at increased risk");
             massage.Append("\t Adults 27.5 or more are at high risk");
+            
             return massage.ToString();
         }
     }
