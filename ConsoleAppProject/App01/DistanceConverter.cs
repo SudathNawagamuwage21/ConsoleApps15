@@ -41,16 +41,7 @@ namespace ConsoleAppProject.App01
 
         }
 
-        /// <summary>
-        /// class diagram method
-        /// </summary>
-        public DistanceUnits DistanceUnits
-        {
-            get => default;
-            set
-            {
-            }
-        }
+       
         
         /// <summary>
         /// In this method ask the user to input the didtance and distance unit and 
