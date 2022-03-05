@@ -155,5 +155,13 @@ namespace ConsoleAppProject.App01
             Console.WriteLine($"\n { FromDistance} { FromUnit} " +
                 $" is { ToDistance} { ToUnit} !\n");
         }
+
+        public DistanceUnits DistanceUnits1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

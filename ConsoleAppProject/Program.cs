@@ -29,6 +29,15 @@ namespace ConsoleAppProject
             {
             }
         }
+
+        public static DistanceConverter DistanceConverter1
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
