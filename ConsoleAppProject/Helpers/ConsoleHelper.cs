@@ -17,13 +17,7 @@ namespace ConsoleAppProject.Helpers
     /// </summary>
     public static class ConsoleHelper
     {
-        public static App01.DistanceConverter DistanceConverter
-        {
-            get => default;
-            set
-            {
-            }
-        }
+       
 
         /// <summary>
         /// This method displays a list of numbered choices to the

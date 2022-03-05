@@ -46,17 +46,7 @@ namespace ConsoleAppProject.App01
             ToUnit = DistanceUnits.Feet;
         }
 
-        /// <summary>
-        /// class diagram method
-        /// </summary>
-        public DistanceUnits DistanceUnits
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
+        
         /// <summary>
         /// In this method ask the user to input the didtance and distance unit and 
         /// calculate the sane distance in unnit.
@@ -156,12 +146,5 @@ namespace ConsoleAppProject.App01
                 $" is { ToDistance} { ToUnit} !\n");
         }
 
-        public DistanceUnits DistanceUnits1
-        {
-            get => default;
-            set
-            {
-            }
-        }
     }
 }
