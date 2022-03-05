@@ -87,7 +87,8 @@ namespace ConsoleAppProject.App02
 
         public void CalculateMetricBMI()
         {
-            Index = Kilograms / (metres * metres);
+            metres = (double)Centimetres / 100;
+            Index =  Kilograms / (metres * metres);
         }
 
         /// <summary>
@@ -178,7 +179,7 @@ namespace ConsoleAppProject.App02
                 massage.Append($" Your BMI is {Index:0.00}, " +
                     $"You are obese class II ");
             }
-            else if (Index <= ObeseLevel3)
+            else if (Index >= ObeseLevel3)
             {
                 massage.Append($" Your BMI is {Index:0.00}, " +
                     $"You are obese class III ");
