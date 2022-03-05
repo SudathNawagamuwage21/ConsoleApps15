@@ -12,6 +12,7 @@ namespace ConsoleAppProject.Helpers
     /// and a title.
     /// <author>
     /// Derek Peacock 2021
+    /// Edit By Sudath Nawagamuwage
     /// </author>
     /// </summary>
     public static class ConsoleHelper
