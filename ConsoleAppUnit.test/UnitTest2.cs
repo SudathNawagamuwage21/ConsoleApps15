@@ -9,7 +9,7 @@ namespace ConsoleAppUnit.test
     {   
         //Imperial Testing
         [TestMethod]
-        public void TestImperialUnderweight()
+        public void TestImperialUnderweightLow()
         {   
             //Arrange
             BMI calculator = new BMI();
@@ -28,8 +28,29 @@ namespace ConsoleAppUnit.test
             //Assert
             Assert.AreEqual(expectedIndex, actualIndex);
         }
+        //Imperial Testing
         [TestMethod]
-        public void TestImperialNormalRange()
+        public void TestImperialUnderweightMax()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Pounds = 135;
+            calculator.Feet = 6;
+
+            //Act
+            calculator.CalculateImperialBMI();
+
+            double expectedIndex = 18.31;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
+        [TestMethod]
+        public void TestImperialNormalRangeLow()
         {   
             //Arrange
             BMI calculator = new BMI();
@@ -48,7 +69,26 @@ namespace ConsoleAppUnit.test
             Assert.AreEqual(expectedIndex, actualIndex);
         }
         [TestMethod]
-        public void TestImperialOverWeight()
+        public void TestImperialNormalRangeMax()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Pounds = 175;
+            calculator.Inches = 72;
+
+            calculator.CalculateImperialBMI();
+
+            double expectedIndex = 23.73;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
+        [TestMethod]
+        public void TestImperialOverWeightLow()
         {   
             //Arrange
             BMI calculator = new BMI();
@@ -68,7 +108,27 @@ namespace ConsoleAppUnit.test
             Assert.AreEqual(expectedIndex, actualIndex);
         }
         [TestMethod]
-        public void TestImperialObeseLevel1()
+        public void TestImperialOverWeightMax()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Stones = 9;
+            calculator.Inches = 55;
+
+            //Act
+            calculator.CalculateImperialBMI();
+
+            double expectedIndex = 29.28;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
+        [TestMethod]
+        public void TestImperialObeseLevel1Low()
         {   
             //Arrange
             BMI calculator = new BMI();
@@ -87,8 +147,27 @@ namespace ConsoleAppUnit.test
             //Assert
             Assert.AreEqual(expectedIndex, actualIndex);
         }
+        public void TestImperialObeseLevel1Max()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Pounds = 190;
+            calculator.Inches = 65;
+
+            //Act
+            calculator.CalculateImperialBMI();
+
+            double expectedIndex = 31.61;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
         [TestMethod]
-        public void TestImperialObeseLevel2()
+        public void TestImperialObeseLevel2Low()
         {   
             //Arrange
             BMI calculator = new BMI();
@@ -107,8 +186,27 @@ namespace ConsoleAppUnit.test
             //Assert
             Assert.AreEqual(expectedIndex, actualIndex);
         }
+        public void TestImperialObeseLevel2Max()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Pounds = 198;
+            calculator.Feet = 5;
+
+            //Act
+            calculator.CalculateImperialBMI();
+
+            double expectedIndex = 38.67;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
         [TestMethod]
-        public void TestImperialObeseLevel3()
+        public void TestImperialObeseLevel3Low()
         {   
             //Arrange
             BMI calculator = new BMI();
@@ -127,10 +225,29 @@ namespace ConsoleAppUnit.test
             //Assert
             Assert.AreEqual(expectedIndex, actualIndex);
         }
-        
+        public void TestImperialObeseLevel3Max()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Stones = 20;
+            calculator.Inches = 60;
+
+            //Act
+            calculator.CalculateImperialBMI();
+
+            double expectedIndex = 54.68;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
+
         //Metric Testing
         [TestMethod]
-        public void TestMetricUnderweight()
+        public void TestMetricUnderweightLow()
         {
             //Arrange
             BMI calculator = new BMI();
@@ -149,20 +266,18 @@ namespace ConsoleAppUnit.test
             //Assert
             Assert.AreEqual(expectedIndex, actualIndex);
         }
-
-        [TestMethod]
-        public void TestMetricNormalRange()
+        public void TestMetricUnderweightMax()
         {
             //Arrange
             BMI calculator = new BMI();
 
-            calculator.Kilograms = 61;
-            calculator.Centimetres = 157;
+            calculator.Kilograms = 68;
+            calculator.Centimetres = 193;
 
             //Act
             calculator.CalculateMetricBMI();
 
-            double expectedIndex = 24.75;
+            double expectedIndex = 18.26;
             double actualIndex = calculator.Index;
 
             actualIndex = Math.Round(actualIndex, 2);
@@ -172,7 +287,68 @@ namespace ConsoleAppUnit.test
         }
 
         [TestMethod]
-        public void TestMetricOverWeight()
+        public void TestMetricNormalRangeLow()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Kilograms = 60;
+            calculator.Centimetres = 175;
+
+            //Act
+            calculator.CalculateMetricBMI();
+
+            double expectedIndex = 19.59;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
+        [TestMethod]
+        public void TestMetricNormalRangeMax()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Kilograms = 90;
+            calculator.Centimetres = 193;
+
+            //Act
+            calculator.CalculateMetricBMI();
+
+            double expectedIndex = 24.16;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
+
+        [TestMethod]
+        public void TestMetricOverWeightlow()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Kilograms = 75;
+            calculator.Centimetres = 172;
+
+            //Act
+            calculator.CalculateMetricBMI();
+
+            double expectedIndex = 25.35;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
+        [TestMethod]
+        public void TestMetricOverWeightMax()
         {
             //Arrange
             BMI calculator = new BMI();
@@ -192,7 +368,27 @@ namespace ConsoleAppUnit.test
             Assert.AreEqual(expectedIndex, actualIndex);
         }
         [TestMethod]
-        public void TestMetricObeseLevel1()
+        public void TestMetricObeseLevel1Low()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Kilograms = 80;
+            calculator.Centimetres = 160;
+
+            //Act
+            calculator.CalculateMetricBMI();
+
+            double expectedIndex = 31.25;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
+        [TestMethod]
+        public void TestMetricObeseLevel1Max()
         {
             //Arrange
             BMI calculator = new BMI();
@@ -212,7 +408,7 @@ namespace ConsoleAppUnit.test
             Assert.AreEqual(expectedIndex, actualIndex);
         }
         [TestMethod]
-        public void TestMetricObeseLevel2()
+        public void TestMetricObeseLevel2Low()
         {
             //Arrange
             BMI calculator = new BMI();
@@ -232,7 +428,47 @@ namespace ConsoleAppUnit.test
             Assert.AreEqual(expectedIndex, actualIndex);
         }
         [TestMethod]
-        public void TestMetricObeseLevel3()
+        public void TestMetricObeseLevel2Max()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Kilograms = 95;
+            calculator.Centimetres = 158;
+
+            //Act
+            calculator.CalculateMetricBMI();
+
+            double expectedIndex = 38.05;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
+        [TestMethod]
+        public void TestMetricObeseLevel3Low()
+        {
+            //Arrange
+            BMI calculator = new BMI();
+
+            calculator.Kilograms = 97;
+            calculator.Centimetres = 154;
+
+            //Act
+            calculator.CalculateMetricBMI();
+
+            double expectedIndex = 40.90;
+            double actualIndex = calculator.Index;
+
+            actualIndex = Math.Round(actualIndex, 2);
+
+            //Assert
+            Assert.AreEqual(expectedIndex, actualIndex);
+        }
+        [TestMethod]
+        public void TestMetricObeseLevel3Max()
         {
             //Arrange
             BMI calculator = new BMI();
