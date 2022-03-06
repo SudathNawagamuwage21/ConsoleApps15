@@ -203,6 +203,14 @@ namespace ConsoleAppProject.App02
             
             return massage.ToString();
         }
+
+        public UnitSystem UnitSystem1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 
 }

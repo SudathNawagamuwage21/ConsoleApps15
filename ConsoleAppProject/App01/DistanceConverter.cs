@@ -37,6 +37,14 @@ namespace ConsoleAppProject.App01
         public DistanceUnits FromUnit { get; set; }
         public DistanceUnits ToUnit { get; set; }
 
+        public DistanceUnits DistanceUnits
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// Set a constructer to set the default value. 
         /// </summary>
