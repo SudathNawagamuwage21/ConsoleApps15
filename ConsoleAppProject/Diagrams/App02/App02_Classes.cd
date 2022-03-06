@@ -31,7 +31,7 @@
     </ShowAsAssociation>
   </Class>
   <Enum Name="ConsoleAppProject.App02.UnitSystem">
-    <Position X="10.5" Y="0.75" Width="1.5" />
+    <Position X="10" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>App02\UnitSystem.cs</FileName>
