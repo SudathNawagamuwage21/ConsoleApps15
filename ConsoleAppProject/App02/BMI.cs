@@ -41,7 +41,6 @@ namespace ConsoleAppProject.App02
         public int Pounds { get; set; }
         public int Stones { get; set; }
 
-
         public UnitSystem UnitSystem
         {
             get => default;
@@ -77,6 +76,9 @@ namespace ConsoleAppProject.App02
             //OutputHealthMessage();
         }
 
+        /// <summary>
+        /// Calulate the Imperial
+        /// </summary>
         public void CalculateImperialBMI()
         {
             Inches += Feet * InchesInFeet;
@@ -85,6 +87,9 @@ namespace ConsoleAppProject.App02
             Index = (double) Pounds * 703 / (Inches * Inches);
         }
 
+        /// <summary>
+        /// Calulate the Metric
+        /// </summary>
         public void CalculateMetricBMI()
         {
             metres = (double)Centimetres / 100;
