@@ -8,6 +8,15 @@ namespace ConsoleAppUnit.test
     public class TestStudentGrades
     { 
         private readonly StudentGrades converter = new StudentGrades();
+        private int[] testMarks;
+
+        public TestStudentGrades()
+        {
+            testMarks = new int[]
+            {
+                10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+            };
+        }
 
         [TestMethod]
         public void TestConvert0toGradeF()
@@ -44,7 +53,6 @@ namespace ConsoleAppUnit.test
             Grades actualGrade = converter.ConvertToGrade(40);
 
             //Assert
-
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
@@ -58,7 +66,6 @@ namespace ConsoleAppUnit.test
             Grades actualGrade = converter.ConvertToGrade(49);
 
             //Assert
-
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
@@ -72,7 +79,6 @@ namespace ConsoleAppUnit.test
             Grades actualGrade = converter.ConvertToGrade(50);
 
             //Assert
-
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
@@ -86,7 +92,6 @@ namespace ConsoleAppUnit.test
             Grades actualGrade = converter.ConvertToGrade(59);
 
             //Assert
-
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
@@ -100,7 +105,6 @@ namespace ConsoleAppUnit.test
             Grades actualGrade = converter.ConvertToGrade(60);
 
             //Assert
-
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
@@ -114,7 +118,6 @@ namespace ConsoleAppUnit.test
             Grades actualGrade = converter.ConvertToGrade(69);
 
             //Assert
-
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
@@ -128,7 +131,6 @@ namespace ConsoleAppUnit.test
             Grades actualGrade = converter.ConvertToGrade(70);
 
             //Assert
-
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
@@ -142,8 +144,20 @@ namespace ConsoleAppUnit.test
             Grades actualGrade = converter.ConvertToGrade(100);
 
             //Assert
-
             Assert.AreEqual(expectedGrade, actualGrade);
+        }
+        [TestMethod]
+        public void TestCalculateMean()
+        {
+            //Arrange
+            converter.Marks = testMarks;
+            double expectedMean = 55.0;
+
+            //Act
+            converter.CalculateStats();
+
+            //Assert
+            Assert.AreEqual(expectedMean, converter.Mean);
         }
     }
 }
