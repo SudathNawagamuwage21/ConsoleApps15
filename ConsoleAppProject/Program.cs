@@ -16,9 +16,9 @@ namespace ConsoleAppProject
     /// </summary>
     public static class Program
     {
-        private static DistanceConverter Converter = new DistanceConverter();
+       // private static DistanceConverter Converter = new DistanceConverter();
 
-        private static BMI calculator = new BMI();
+       // private static BMI calculator = new BMI();
 
         public static void Main(string[] args)
         {
@@ -28,18 +28,27 @@ namespace ConsoleAppProject
             Console.WriteLine();
             Console.Beep();
 
-            string[] choices = { "Distance Converter", "BMI Calculator", "Quit" };
+            string[] choices = { "App01: Distance Converter", "App02: BMI Calculator", "App03: Student Grades", "Quit" };
             int choiceNo = ConsoleHelper.SelectChoice(choices);
 
-            if (choiceNo == 1)
+            switch (choiceNo)
             {
-                Converter.ConvertDistance();
+                case 1:
+                    DistanceConverter converter = new DistanceConverter();
+                    converter.ConvertDistance();
+                    break;
+                case 2:
+                    BMI calculator = new BMI();
+                    calculator.CalculaterIndex();
+                    break;
+                case 3:
+                    StudentGrades grades = new StudentGrades();
+                    grades.StudentGradesMenu();
+                    break;
+                default:
+                    Console.WriteLine("Invalid Choice!");
+                    break;
             }
-            else if (choiceNo == 2)
-            {
-                calculator.CalculaterIndex();
-            }
-            else Console.WriteLine("Invalid Choice!");
         }
     }
 }

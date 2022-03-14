@@ -161,6 +161,39 @@ namespace ConsoleAppProject.App03
             Console.WriteLine();
            // DisplayMenu("\n\nPlease enter your choice > ");
         }
+       
+        /// <summary>
+        /// Prompt the user to select their choice
+        /// </summary>
+        private void SelectMenu(string prompt)
+        {
+            string[] choices =
+            {
+                "Input Marks",
+                "Ouput Marks",
+                "Output Stats",
+                "Ouput Grade Profile",
+                "Quit"
+            };
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
+            GradeIndex(choiceNo);
+
+        }
+
+        private void GradeIndex(int choiceNo)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Ouput the heading and 
+        /// display the menu
+        /// </summary>
+        public void StudentGradesMenu()
+        {
+            ConsoleHelper.OutputHeading("Student Grades Display");
+            SelectMenu("Please enter your choice > ");
+        }
 
     }
 }
