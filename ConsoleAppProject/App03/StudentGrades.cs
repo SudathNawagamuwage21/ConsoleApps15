@@ -191,7 +191,7 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void StudentGradesMenu()
         {
-            ConsoleHelper.OutputHeading("Student Grades Display");
+            ConsoleHelper.OutputHeading("\t\t Student Marks System");
             SelectMenu("Please enter your choice > ");
         }
 
