@@ -182,7 +182,26 @@ namespace ConsoleAppProject.App03
 
         private void GradeIndex(int choiceNo)
         {
-            throw new NotImplementedException();
+            switch (choiceNo)
+            {
+                case 1:
+                    InputMarks();
+                    break;
+                case 2:
+                    OutputMarks();
+                    break;
+                case 3:
+                    CalculateStats();
+                    break;
+                case 4:
+                    CalculateGradeProfile();
+                    OutputGradeProfile();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice");
+                    SelectMenu("Please enter your choice > ");
+                    break;
+            }
         }
 
         /// <summary>
