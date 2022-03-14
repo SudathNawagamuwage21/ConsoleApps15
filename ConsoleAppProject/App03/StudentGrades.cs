@@ -18,10 +18,7 @@ namespace ConsoleAppProject.App03
         public const int LowestGradeC = 50;
         public const int LowestGradeD = 40;
         public const int LowestMark = 0;
-
-
-
-
+       
         //properties
         public string[] Students { get; set; }
         public int[] Marks { get; set; }
@@ -72,7 +69,35 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public Grades ConvertToGrade(int mark)
         {
-            throw new NotImplementedException();
+            if (mark >= LowestMark && mark < LowestGradeD)
+            {
+                StudentClass = "Fail";
+                return Grades.F;
+            }
+            else if (mark >= LowestGradeD && mark < LowestGradeC)
+            {
+                StudentClass = "Third Class";
+                return Grades.D;
+            }
+            else if (mark >= LowestGradeC && mark < LowestGradeB)
+            {
+                StudentClass = "Lower Second";
+                return Grades.C;
+            }
+            else if (mark >= LowestGradeB && mark < LowestGradeA)
+            {
+                StudentClass = "Upper Second";
+                return Grades.B;
+            }
+            else if (mark >= LowestGradeA && mark <= HighestMark)
+            {
+                StudentClass = "First Class";
+                return Grades.A;
+            }
+            else
+            {
+                return Grades.F;
+            }
         }
         /// <summary>
         /// Calculate and display the minimum, maximum
