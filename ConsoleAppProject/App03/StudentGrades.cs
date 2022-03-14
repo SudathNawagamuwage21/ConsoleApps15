@@ -11,6 +11,17 @@ namespace ConsoleAppProject.App03
     /// </summary>
     public class StudentGrades
     {
+        //Constants
+        public const int HighestMark = 100;
+        public const int LowestGradeA = 70;
+        public const int LowestGradeB = 60;
+        public const int LowestGradeC = 50;
+        public const int LowestGradeD = 40;
+        public const int LowestMark = 0;
+
+
+
+
         //properties
         public string[] Students { get; set; }
         public int[] Marks { get; set; }
@@ -19,6 +30,8 @@ namespace ConsoleAppProject.App03
         public int Minimum { get; set; }
         public int Maximum { get; set; }
         public string StudentClass { get; set; }
+
+        //Attributes
 
         ///<summary>
         ///Class Constructor called when an object

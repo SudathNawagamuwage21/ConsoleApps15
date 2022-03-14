@@ -5,7 +5,7 @@ using ConsoleAppProject.App03;
 namespace ConsoleAppUnit.test
 {
     [TestClass]
-    internal class TestStudentGrades
+    public class TestStudentGrades
     { 
         private readonly StudentGrades converter = new StudentGrades();
 
