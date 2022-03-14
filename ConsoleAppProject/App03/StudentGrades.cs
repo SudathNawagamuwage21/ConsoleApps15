@@ -6,8 +6,8 @@ using ConsoleAppProject.Helpers;
 namespace ConsoleAppProject.App03
 {
     /// <summary>
-    /// At the moment this class just tests the
-    /// Grades enumeration names and descriptions
+    /// This application will allow a tutor to enter a single mark of each of 
+    /// a list of students and it will convert that mark into a grade. 
     /// </summary>
     public class StudentGrades
     {
@@ -71,27 +71,27 @@ namespace ConsoleAppProject.App03
         {
             if (mark >= LowestMark && mark < LowestGradeD)
             {
-                StudentClass = "Fail";
+                StudentClass = "Referred";
                 return Grades.F;
             }
             else if (mark >= LowestGradeD && mark < LowestGradeC)
             {
-                StudentClass = "Third Class";
+                StudentClass = "BSc(Hons) Third Class";
                 return Grades.D;
             }
             else if (mark >= LowestGradeC && mark < LowestGradeB)
             {
-                StudentClass = "Lower Second";
+                StudentClass = "BSc(Hons) Lower Second";
                 return Grades.C;
             }
             else if (mark >= LowestGradeB && mark < LowestGradeA)
             {
-                StudentClass = "Upper Second";
+                StudentClass = "BSc(Hons) Upper Second";
                 return Grades.B;
             }
             else if (mark >= LowestGradeA && mark <= HighestMark)
             {
-                StudentClass = "First Class";
+                StudentClass = "BSc(Hons) First Class";
                 return Grades.A;
             }
             else
@@ -124,6 +124,42 @@ namespace ConsoleAppProject.App03
             }
 
             Mean = total / Marks.Length;
+        }
+
+        /// <summary>
+        /// Calculate  Grade profile of students 
+        /// </summary>
+        public void CalculateGradeProfile()
+        {
+            for (int i = 0; i < GradeProfile.Length; i++)
+            {
+                GradeProfile[i] = 0;
+            }
+
+            foreach (int mark in Marks)
+            {
+                Grades grade = ConvertToGrade(mark);
+                GradeProfile[(int)grade]++;
+            }
+        }
+
+        /// <summary>
+        /// Output the resul of grade profile 
+        /// </summary>
+        public void OutputGradeProfile()
+        {
+            Grades grade = Grades.D;
+            Console.WriteLine();
+
+            foreach (int count in GradeProfile)
+            {
+                int percentage = count * 100 / Marks.Length;
+                Console.WriteLine($"Grade {grade} {percentage}% Count {count}");
+                grade++;
+            }
+
+            Console.WriteLine();
+           // DisplayMenu("\n\nPlease enter your choice > ");
         }
 
     }
