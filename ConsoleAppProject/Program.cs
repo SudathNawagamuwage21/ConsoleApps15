@@ -20,22 +20,6 @@ namespace ConsoleAppProject
 
         private static BMI calculator = new BMI();
 
-        public static DistanceConverter DistanceConverter
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public static BMI BMI
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
