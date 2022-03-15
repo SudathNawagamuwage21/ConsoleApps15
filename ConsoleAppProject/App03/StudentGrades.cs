@@ -9,6 +9,9 @@ namespace ConsoleAppProject.App03
     /// This application will allow a tutor to enter a single mark of each of 
     /// a list of students and it will convert that mark into a grade. 
     /// </summary>
+    /// <author>
+    /// Sudath nawagamuwage version 0.1
+    /// </author>
     public class StudentGrades
     {
         //Constants
@@ -26,7 +29,7 @@ namespace ConsoleAppProject.App03
         public double Mean { get; set; }
         public int Minimum { get; set; }
         public int Maximum { get; set; }
-        public string StudentClass { get; set; }
+         public string StudentClass { get; set; }
 
         //Attributes
 
@@ -44,7 +47,13 @@ namespace ConsoleAppProject.App03
             };
 
             GradeProfile = new int[(int)Grades.A + 1];
-            Marks = new int[Students.Length];
+            // Marks = new int[Students.Length];
+            
+            // Testing for maks arrys
+            Marks = new int[]
+            { 
+                80, 55, 45, 70, 75, 65, 70, 66, 60, 55, 55
+            };
 
         }
         /// <summary>
@@ -53,7 +62,14 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void InputMarks()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("\nPlease enter a mark for each student\n");
+            for (int i = 0; i < Students.Length; i++)
+            {
+                Marks[i] = (int)ConsoleHelper.InputNumber($"Enter {Students[i]} marks: ", LowestMark, HighestMark);
+            }
+
+            Console.WriteLine();
+            DisplayMenu("\nPlease enter your choice > ");
         }
         /// <summary>
         /// List all the student and display their
@@ -61,7 +77,15 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void OutputMarks()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("\nOutput mark for each student.\n");
+
+            for (int i = 0; i < Students.Length; i++)
+            {
+                Console.WriteLine($"Student Name: {Students[i]} \nStudent Mark: {Marks[i]}\n" +
+                    $"Student Grade: {ConvertToGrade(Marks[i])}\nStudent Class: {StudentClass}\n");
+            }
+
+            DisplayMenu("\n\nPlease enter your choice > ");
         }
         /// <summary>
         /// Convert a student mark to a grade
@@ -112,6 +136,8 @@ namespace ConsoleAppProject.App03
 
             foreach (int mark in Marks)
             {
+                total += mark;
+
                 if (mark > Maximum)
                 {
                     Maximum = mark;
@@ -120,10 +146,15 @@ namespace ConsoleAppProject.App03
                 {
                     Minimum = mark;
                 }
-                total += mark;
+               
             }
 
             Mean = total / Marks.Length;
+
+            Console.WriteLine("\nOutput the mean mark, the minimum mark and the maximum mark\n");
+            Console.WriteLine($"Mean Mark: {Mean}\nMinimum Mark: {Minimum}\nMaximum Mark:{Maximum}");
+            Console.WriteLine();
+            DisplayMenu("\n\nPlease enter your choice > ");
         }
 
         /// <summary>
@@ -159,13 +190,13 @@ namespace ConsoleAppProject.App03
             }
 
             Console.WriteLine();
-           // DisplayMenu("\n\nPlease enter your choice > ");
+            DisplayMenu("\n\nPlease enter your choice > ");
         }
        
         /// <summary>
         /// Prompt the user to select their choice
         /// </summary>
-        private void SelectMenu(string prompt)
+        private void DisplayMenu(string prompt)
         {
             string[] choices =
             {
@@ -179,8 +210,12 @@ namespace ConsoleAppProject.App03
             GradeIndex(choiceNo);
 
         }
-
-        private void GradeIndex(int choiceNo)
+        /// <summary>
+        /// Prompt the user to select Imperial or Matric units.
+        /// Input the user's height and weight and then calculate 
+        /// their MBI value. Output which weight catergory they fall into
+        /// </summary>
+        public void GradeIndex(int choiceNo)
         {
             switch (choiceNo)
             {
@@ -199,7 +234,7 @@ namespace ConsoleAppProject.App03
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
-                    SelectMenu("Please enter your choice > ");
+                    DisplayMenu("Please enter your choice > ");
                     break;
             }
         }
@@ -211,7 +246,7 @@ namespace ConsoleAppProject.App03
         public void StudentGradesMenu()
         {
             ConsoleHelper.OutputHeading("\t\t Student Marks System");
-            SelectMenu("Please enter your choice > ");
+            DisplayMenu("Please enter your choice > ");
         }
 
     }
