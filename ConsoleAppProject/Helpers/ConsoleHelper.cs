@@ -17,23 +17,6 @@ namespace ConsoleAppProject.Helpers
     /// </summary>
     public static class ConsoleHelper
     {
-        public static App01.DistanceConverter DistanceConverter
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public static App02.BMI BMI
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-
         /// <summary>
         /// This method displays a list of numbered choices to the
         /// user, they can then select a choice and and the choice 

@@ -16,9 +16,17 @@ namespace ConsoleAppProject
     /// </summary>
     public static class Program
     {
-       // private static DistanceConverter Converter = new DistanceConverter();
+        public static StudentGrades StudentGrades
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
-       // private static BMI calculator = new BMI();
+        // private static DistanceConverter Converter = new DistanceConverter();
+
+        // private static BMI calculator = new BMI();
 
         public static void Main(string[] args)
         {
