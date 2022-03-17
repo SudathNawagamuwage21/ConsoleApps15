@@ -29,7 +29,7 @@ namespace ConsoleAppProject.App03
         public double Mean { get; set; }
         public int Minimum { get; set; }
         public int Maximum { get; set; }
-         public string StudentClass { get; set; }
+        public string StudentClass { get; set; }
 
         //Attributes
 
@@ -43,7 +43,7 @@ namespace ConsoleAppProject.App03
             Students = new string[]
             {
                  "Sudath", "Tania", "Saveyth", "Niveith", "Kiveith",
-                "Rosan", "Matin", "Machile", "Natasha", "Jack"
+                "Rosahan", "Matin", "Michelle", "Natasha", "Jack"
             };
 
             GradeProfile = new int[(int)Grades.A + 1];
@@ -56,6 +56,7 @@ namespace ConsoleAppProject.App03
             };
 
         }
+
         /// <summary>
         /// Input a mark between 0 - 100 for 
         /// each student and store it in the Marks array.
@@ -72,13 +73,13 @@ namespace ConsoleAppProject.App03
             ConsoleHelper.OutputHeading("\t\t Student Marks System");
             DisplayMenu("\nPlease enter your choice > ");
         }
+
         /// <summary>
         /// List all the student and display their
         /// name and current mark.
         /// </summary>
         public void OutputMarks()
         {
-            //Console.WriteLine("\nOutput mark for each student\n");
             ConsoleHelper.OutputHeading1("\t\tThe each Student Marks");
 
             for (int i = 0; i < Students.Length; i++)
@@ -90,6 +91,7 @@ namespace ConsoleAppProject.App03
             ConsoleHelper.OutputHeading("\t\t Student Marks System");
             DisplayMenu("\n\nPlease enter your choice > ");
         }
+
         /// <summary>
         /// Convert a student mark to a grade
         /// from F(fail) to A (First Class)
@@ -126,6 +128,7 @@ namespace ConsoleAppProject.App03
                 return Grades.F;
             }
         }
+
         /// <summary>
         /// Calculate and display the minimum, maximum
         /// and mean mark for all the students.
@@ -216,6 +219,7 @@ namespace ConsoleAppProject.App03
             GradeIndex(choiceNo);
 
         }
+
         /// <summary>
         /// Prompt the user to select input marks, output mark, calculate satats
         /// calculate gradeProfile, output grade profile and input the marks
