@@ -202,11 +202,11 @@ namespace ConsoleAppProject.App03
             ConsoleHelper.OutputHeading("\t\t Student Marks System");
             DisplayMenu("\n\nPlease enter your choice > ");
         }
-       
+
         /// <summary>
         /// Prompt the user to select their choice
         /// </summary>
-        private void DisplayMenu(string prompt)
+        private void DisplayMenu(string display)
         {
             string[] choices =
             {
