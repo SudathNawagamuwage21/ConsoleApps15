@@ -6,7 +6,7 @@ using ConsoleAppProject.Helpers;
 namespace ConsoleAppProject.App03
 {
     /// <summary>
-    /// This application will allow a tutor to enter a single mark of each of 
+    /// This application will allow a tutor to enter a single mark of each of
     /// a list of students and it will convert that mark into a grade. 
     /// </summary>
     /// <author>
