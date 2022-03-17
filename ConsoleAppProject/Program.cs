@@ -53,6 +53,9 @@ namespace ConsoleAppProject
                     StudentGrades grades = new StudentGrades();
                     grades.StudentGradesMenu();
                     break;
+                case 4:
+                    Environment.Exit(0);
+                    break;
                 default:
                     Console.WriteLine("Invalid Choice!");
                     break;
