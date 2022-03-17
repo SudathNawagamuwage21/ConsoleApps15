@@ -69,6 +69,7 @@ namespace ConsoleAppProject.App03
             }
 
             Console.WriteLine();
+            ConsoleHelper.OutputHeading("\t\t Student Marks System");
             DisplayMenu("\nPlease enter your choice > ");
         }
         /// <summary>
@@ -77,14 +78,16 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void OutputMarks()
         {
-            Console.WriteLine("\nOutput mark for each student.\n");
+            //Console.WriteLine("\nOutput mark for each student\n");
+            ConsoleHelper.OutputHeading1("\t\tThe each Student Marks");
 
             for (int i = 0; i < Students.Length; i++)
             {
-                Console.WriteLine($"Student Name: {Students[i]} \nStudent Mark: {Marks[i]}\n" +
-                    $"Student Grade: {ConvertToGrade(Marks[i])}\nStudent Class: {StudentClass}\n");
+                Console.WriteLine($"Student Name: {Students[i]} \tStudent Mark: {Marks[i]}\t" +
+                    $"Student Grade: {ConvertToGrade(Marks[i])}\tStudent Class: {StudentClass}\t");
             }
-
+            Console.WriteLine();
+            ConsoleHelper.OutputHeading("\t\t Student Marks System");
             DisplayMenu("\n\nPlease enter your choice > ");
         }
         /// <summary>
@@ -151,9 +154,10 @@ namespace ConsoleAppProject.App03
 
             Mean = total / Marks.Length;
 
-            Console.WriteLine("\nOutput the mean mark, the minimum mark and the maximum mark\n");
+            ConsoleHelper.OutputHeading1("The Student Mean Mark, Minimum Mark and Maximum Mark");
             Console.WriteLine($"Mean Mark: {Mean}\nMinimum Mark: {Minimum}\nMaximum Mark:{Maximum}");
             Console.WriteLine();
+            ConsoleHelper.OutputHeading("\t\t Student Marks System");
             DisplayMenu("\n\nPlease enter your choice > ");
         }
 
@@ -181,15 +185,17 @@ namespace ConsoleAppProject.App03
         {
             Grades grade = Grades.D;
             Console.WriteLine();
-
+            ConsoleHelper.OutputHeading1("\t\tThe Student Grade Profile");
             foreach (int count in GradeProfile)
             {
                 int percentage = count * 100 / Marks.Length;
-                Console.WriteLine($"Grade {grade} {percentage}% Count {count}");
+                Console.WriteLine($"Grade {grade}\t {percentage}%\t Count {count}");
                 grade++;
+                
             }
 
             Console.WriteLine();
+            ConsoleHelper.OutputHeading("\t\t Student Marks System");
             DisplayMenu("\n\nPlease enter your choice > ");
         }
        
@@ -211,10 +217,9 @@ namespace ConsoleAppProject.App03
 
         }
         /// <summary>
-        /// Prompt the user to select Imperial or Matric units.
-        /// Input the user's height and weight and then calculate 
-        /// their MBI value. Output which weight catergory they fall into
-        /// </summary>
+        /// Prompt the user to select input marks, output mark, calculate satats
+        /// calculate gradeProfile, output grade profile and input the marks
+         /// </summary>
         public void GradeIndex(int choiceNo)
         {
             switch (choiceNo)

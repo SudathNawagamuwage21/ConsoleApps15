@@ -142,8 +142,26 @@ namespace ConsoleAppProject.Helpers
 
             Console.WriteLine("\n ----------------------------------------------------");
             Console.WriteLine($"       {heading}                         ");
-            Console.WriteLine("                by Sudath Nawagamuwage           ");
+            Console.WriteLine("               by Sudath Nawagamuwage                     ");
             Console.WriteLine(" ----------------------------------------------------" +
+                "\n");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+        }
+        /// <summary>
+        /// Output a short heading in green for the application
+        /// and the name of the author and a prompt to
+        /// inform the use which units are being converted
+        /// Please change the authors name.
+        /// </summary>
+        public static void OutputHeading1(string heading)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            Console.WriteLine("\n --------------------------------------------------------------");
+            Console.WriteLine($"   {heading}                         ");
+            Console.WriteLine("                                 ");
+            Console.WriteLine(" --------------------------------------------------------------" +
                 "\n");
 
             Console.ForegroundColor = ConsoleColor.Yellow;
