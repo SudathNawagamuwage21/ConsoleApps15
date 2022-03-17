@@ -64,7 +64,7 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void InputMarks()
         {
-            Console.WriteLine("\nPlease enter a mark for each student\n");
+            ConsoleHelper.OutputHeading1("\t\tPlease enter a mark for each student");
             for (int i = 0; i < Students.Length; i++)
             {
                 Marks[i] = (int)ConsoleHelper.InputNumber($"Enter {Students[i]} marks: ", LowestMark, HighestMark);
@@ -241,6 +241,9 @@ namespace ConsoleAppProject.App03
                 case 4:
                     CalculateGradeProfile();
                     OutputGradeProfile();
+                    break;
+                case 5:
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
