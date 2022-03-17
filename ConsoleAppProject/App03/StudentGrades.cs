@@ -31,6 +31,14 @@ namespace ConsoleAppProject.App03
         public int Maximum { get; set; }
         public string StudentClass { get; set; }
 
+        public Grades Grades
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         //Attributes
 
         ///<summary>
