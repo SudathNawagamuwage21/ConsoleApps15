@@ -20,12 +20,9 @@
   <Class Name="ConsoleAppProject.App03.StudentGrades">
     <Position X="5.25" Y="0.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>gAIACACAAAAAAAogAAiQAAQAAEAAQAAEAEQCQCEAAAA=</HashCode>
+      <HashCode>gAIACACAAAAAAAogAAiQAAQAAEAAQAAEAEQCQCAAAAA=</HashCode>
       <FileName>App03\StudentGrades.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Grades" />
-    </ShowAsAssociation>
   </Class>
   <Enum Name="ConsoleAppProject.App03.Grades">
     <Position X="10.75" Y="3.5" Width="1.5" />

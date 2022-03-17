@@ -31,13 +31,6 @@ namespace ConsoleAppProject.App03
         public int Maximum { get; set; }
         public string StudentClass { get; set; }
 
-        public Grades Grades
-        {
-            get => default;
-            set
-            {
-            }
-        }
 
         //Attributes
 
@@ -55,13 +48,13 @@ namespace ConsoleAppProject.App03
             };
 
             GradeProfile = new int[(int)Grades.A + 1];
-            // Marks = new int[Students.Length];
+             Marks = new int[Students.Length];
             
             // Testing for maks arrys
-            Marks = new int[]
-            { 
-                80, 55, 45, 70, 75, 65, 70, 66, 60, 55, 55
-            };
+            //Marks = new int[]
+            //{ 
+            //    80, 55, 45, 70, 75, 65, 70, 66, 60, 55, 55
+            //};
 
         }
 
