@@ -9,5 +9,9 @@ namespace Web.Data
             : base(options)
         {
         }
+
+        //App03
+        public DbSet<Student> Students { get; set; }
+
     }
 }
