@@ -11,7 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApps.Data;
+using Web.Data;
+using WebApps.Models;
 
 namespace WebApps
 {
@@ -41,7 +42,8 @@ namespace WebApps
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
+                // app.UseDatabaseErrorPage();
+                app.UseMigrationsEndPoint();
             }
             else
             {
