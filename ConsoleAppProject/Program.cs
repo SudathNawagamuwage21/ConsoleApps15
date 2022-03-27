@@ -1,6 +1,7 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -16,15 +17,7 @@ namespace ConsoleAppProject
     /// </summary>
     public static class Program
     {
-        public static StudentGrades StudentGrades
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        // private static DistanceConverter Converter = new DistanceConverter();
+         // private static DistanceConverter Converter = new DistanceConverter();
 
         // private static BMI calculator = new BMI();
 
@@ -36,7 +29,7 @@ namespace ConsoleAppProject
             Console.WriteLine();
             Console.Beep();
 
-            string[] choices = { "App01: Distance Converter", "App02: BMI Calculator", "App03: Student Grades", "Quit" };
+            string[] choices = { "App01: Distance Converter", "App02: BMI Calculator", "App03: Student Grades", "App04: Social Network", "Quit" };
             int choiceNo = ConsoleHelper.SelectChoice(choices);
 
             switch (choiceNo)
@@ -54,6 +47,10 @@ namespace ConsoleAppProject
                     grades.StudentGradesMenu();
                     break;
                 case 4:
+                    NetworkApp socialApp = new NetworkApp();
+                    socialApp.DisplayMenu();
+                    break;
+                case 5:
                     Environment.Exit(0);
                     break;
                 default:
