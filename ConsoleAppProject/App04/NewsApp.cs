@@ -15,14 +15,55 @@ namespace ConsoleAppProject.App04
     /// </summary>
     public class NewsApp
     {
+        
         public NewsFeed NewsFeed { get; set; }
 
-        public string[] Choices =
+        //public string[] Choices =
+        private void DisplayMenu(string display)
         {
+            string[] choices =
+            {
             "Add Mesage Post",
             "Add Photo Post",
-            "Display All Posts"
-        };
+            "Display All Posts",
+            "Display Posts by Author",
+            "Remove Post",
+            "Add Comment",
+            "Like and Unlike Post",
+            "Quit"
+            };
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
+            NewsIndex(choiceNo);
+        }
+        /// <summary>
+        /// Prompt the user to select input marks, output mark, calculate satats
+        /// calculate gradeProfile, output grade profile and input the marks
+        /// </summary>
+        public void NewsIndex(int choiceNo)
+        {
+            switch (choiceNo)
+            {
+                case 1:
+                    AddMessagePost();
+                    break;
+                case 2:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice");
+                    DisplayMenu("Please enter your choice > ");
+                    break;
+            }
+        }
+        /// <summary>
+        /// Ouput the heading and 
+        /// display the menu
+        /// </summary>
+        public void NewsFeedMenu()
+        {
+            ConsoleHelper.OutputHeading("\t\t Suadth Social Network");
+            DisplayMenu("Please enter your choice > ");
+        }
 
         public NewsApp()
         {
@@ -48,5 +89,6 @@ namespace ConsoleAppProject.App04
             NewsFeed.Posts.Add(post);
 
         }
+       
     }
 }

@@ -41,4 +41,3 @@ namespace ConsoleAppProject.App04
         }
     }
 }
-© 2022 GitHub, Inc.

@@ -48,7 +48,7 @@ namespace ConsoleAppProject
                     break;
                 case 4:
                     NewsApp socialApp = new NewsApp();
-                    socialApp.DisplayMenu();
+                    socialApp.NewsFeedMenu();
                     break;
                 case 5:
                     Environment.Exit(0);
