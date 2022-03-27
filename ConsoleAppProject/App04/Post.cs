@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleAppProject.App04
-{
+{   /// <summary>
+    /// The post class is the 
+    /// </summary>
+    /// <author>
+    /// Sudath Nawagamuwage 
+    /// Date : 27/03/2022
+    /// </author>
     public class Post
     {
         // username of the post's author
@@ -15,6 +21,9 @@ namespace ConsoleAppProject.App04
 
         private readonly List<String> comments;
 
+        /// <summary>
+        /// constructor of the class post
+        /// </summary>
         public Post(String author)
         {
             Author = author;
