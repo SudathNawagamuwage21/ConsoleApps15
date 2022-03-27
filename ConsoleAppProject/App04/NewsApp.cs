@@ -19,7 +19,7 @@ namespace ConsoleAppProject.App04
         public NewsFeed NewsFeed { get; set; }
 
         //public string[] Choices =
-        private void DisplayMenu(string display)
+        private void DisplayMenu(string display1)
         {
             string[] choices =
             {
@@ -50,6 +50,9 @@ namespace ConsoleAppProject.App04
                     AddPhotoPost();
                     break;
                 case 3:
+                    DisplayAll();
+                    break;
+                case 4:
                     Environment.Exit(0);
                     break;
                 default:
@@ -93,6 +96,11 @@ namespace ConsoleAppProject.App04
 
             MessagePost post = new MessagePost(message, author);
             NewsFeed.Posts.Add(post);
+            {
+                Console.WriteLine();
+                ConsoleHelper.OutputHeading("\t\t Suadth Social Network");
+                DisplayMenu("\nPlease enter your choice > ");
+            }
         }/// <summary>
          /// Method for posting image in the news feed
          /// Asking for the author name and their image and caption
@@ -100,6 +108,8 @@ namespace ConsoleAppProject.App04
         private void AddPhotoPost()
         {
             ConsoleHelper.OutputHeading("\t\t Add Photo");
+           
+            Console.Write(" Please enter the authors name > ");
             string author = Console.ReadLine();
 
             Console.Write(" Please enter the Image file name > ");
@@ -108,9 +118,27 @@ namespace ConsoleAppProject.App04
             Console.Write(" Please enter the Image caption > ");
             string caption = Console.ReadLine();
 
-            PhotoPost post = new PhotoPost(filename, caption);
+            PhotoPost post = new PhotoPost(author,filename, caption);
             NewsFeed.Posts.Add(post);
+            {
+                Console.WriteLine();
+                ConsoleHelper.OutputHeading("\t\t Suadth Social Network");
+                DisplayMenu("\nPlease enter your choice > ");
+            }
         }
+        /// <summary>
+        /// Ouputing all the messages and images
+        /// on the news feed
+        /// </summary>
+        private void DisplayAll()
+        {
+            NewsFeed.Display();
+            Console.WriteLine();
+            ConsoleHelper.OutputHeading("\t\t Suadth Social Network");
+            DisplayMenu("\nPlease enter your choice > ");
+        }
+
+
 
 
     }
