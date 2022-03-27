@@ -22,7 +22,7 @@ namespace ConsoleAppProject.App04
         private readonly List<String> comments;
 
         /// <summary>
-        /// constructor of the class post
+        /// The constructor of the class post
         /// </summary>
         public Post(String author)
         {
