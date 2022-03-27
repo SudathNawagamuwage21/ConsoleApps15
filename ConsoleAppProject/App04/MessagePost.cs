@@ -31,6 +31,6 @@ namespace ConsoleAppProject.App04
         {
             Message = text;
         }
-
+        
     }
 }

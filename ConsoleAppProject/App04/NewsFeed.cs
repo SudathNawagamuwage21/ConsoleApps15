@@ -37,9 +37,18 @@ namespace ConsoleAppProject.App04
         /// 
         /// @param text  The text post to be added.
         ///</summary>
-        public void AddPost(Post post)
+        public void AddPost(Post massage)
         {
-            Posts.Add(post);
+            Posts.Add(massage);
+        }
+        ///<summary>
+        /// Add a Photo post to the news feed.
+        /// 
+        /// @param text  The Photo post to be added.
+        ///</summary>
+        public void AddPhoto(PhotoPost photo)
+        {
+            Posts.Add(photo);
         }
 
 

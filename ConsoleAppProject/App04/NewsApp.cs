@@ -47,6 +47,9 @@ namespace ConsoleAppProject.App04
                     AddMessagePost();
                     break;
                 case 2:
+                    AddPhotoPost();
+                    break;
+                case 3:
                     Environment.Exit(0);
                     break;
                 default:
@@ -70,14 +73,17 @@ namespace ConsoleAppProject.App04
             NewsFeed = new NewsFeed();
         }
 
-        public void Run()
-        {
-            AddMessagePost();
-        }
-
+        //public void Run()
+        //{
+        //    AddMessagePost();
+        //}
+        /// <summary>
+        /// Method for posting message in the news feed
+        /// Asking for the author name and their message
+        /// </summary>
         private void AddMessagePost()
         {
-            ConsoleHelper.OutputHeading("Add Message");
+            ConsoleHelper.OutputHeading("\t\t Add Message");
 
             Console.Write(" Please enter the authors name > ");
             string author = Console.ReadLine();
@@ -87,8 +93,25 @@ namespace ConsoleAppProject.App04
 
             MessagePost post = new MessagePost(message, author);
             NewsFeed.Posts.Add(post);
+        }/// <summary>
+         /// Method for posting image in the news feed
+         /// Asking for the author name and their image and caption
+         /// </summary>
+        private void AddPhotoPost()
+        {
+            ConsoleHelper.OutputHeading("\t\t Add Photo");
+            string author = Console.ReadLine();
 
+            Console.Write(" Please enter the Image file name > ");
+            string filename = Console.ReadLine();
+
+            Console.Write(" Please enter the Image caption > ");
+            string caption = Console.ReadLine();
+
+            PhotoPost post = new PhotoPost(filename, caption);
+            NewsFeed.Posts.Add(post);
         }
-       
+
+
     }
 }
