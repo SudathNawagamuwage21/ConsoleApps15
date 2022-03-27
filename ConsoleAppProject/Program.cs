@@ -47,7 +47,7 @@ namespace ConsoleAppProject
                     grades.StudentGradesMenu();
                     break;
                 case 4:
-                    NetworkApp socialApp = new NetworkApp();
+                    NewsApp socialApp = new NewsApp();
                     socialApp.DisplayMenu();
                     break;
                 case 5:

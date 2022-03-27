@@ -16,20 +16,19 @@ namespace ConsoleAppProject.App04
     ///</summary>
     ///<author>
     ///  Michael Kölling and David J. Barnes
+    ///  Modified by Sudath Nawagamuwage 27/03/2022
     ///  version 0.1
     ///</author> 
     public class NewsFeed
     {
-        private readonly List<MessagePost> messages;
-        private readonly List<PhotoPost> photos;
+        public List<Post> Posts { get; set; }
 
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
         public NewsFeed()
         {
-            messages = new List<MessagePost>();
-            photos = new List<PhotoPost>();
+            Posts = new List<Post>();
         }
 
 
@@ -38,20 +37,11 @@ namespace ConsoleAppProject.App04
         /// 
         /// @param text  The text post to be added.
         ///</summary>
-        public void AddMessagePost(MessagePost message)
+        public void AddPost(Post post)
         {
-            messages.Add(message);
+            Posts.Add(post);
         }
 
-        ///<summary>
-        /// Add a photo post to the news feed.
-        /// 
-        /// @param photo  The photo post to be added.
-        ///</summary>
-        public void AddPhotoPost(PhotoPost photo)
-        {
-            photos.Add(photo);
-        }
 
         ///<summary>
         /// Show the news feed. Currently: print the news feed details to the
@@ -60,18 +50,12 @@ namespace ConsoleAppProject.App04
         public void Display()
         {
             // display all text posts
-            foreach (MessagePost message in messages)
+            foreach (Post post in Posts)
             {
-                message.Display();
+                post.Display();
                 Console.WriteLine();   // empty line between posts
             }
 
-            // display all photos
-            foreach (PhotoPost photo in photos)
-            {
-                photo.Display();
-                Console.WriteLine();   // empty line between posts
-            }
         }
     }
 
