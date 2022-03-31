@@ -15,131 +15,115 @@ namespace ConsoleAppProject.App04
     /// </summary>
     public class NewsApp
     {
-        
-        public NewsFeed NewsFeed { get; set; }
 
-        //public string[] Choices =
-        private void DisplayMenu(string display1)
+        public NewsFeed NewsFeed { get; set; }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        public void DisplayMenu()
         {
-            string[] choices =
+            ConsoleHelper.OutputHeading("\t\t Sudath's News Feed");
+
+            string[] choices = new string[]
             {
-            "Add Mesage Post",
-            "Add Photo Post",
-            "Display All Posts",
-            "Display Posts by Author",
-            "Remove Post",
-            "Add Comment",
-            "Like and Unlike Post",
-            "Quit"
+                "Post Message",
+                "Post Image",
+                "Remove Post",
+                "Display All Posts",
+                "Display Posts by Author",
+                "Display Posts by Date",
+                "Add Comment to Post",
+                "Like/Unlike Post",
+                "Quit"
             };
-            int choiceNo = ConsoleHelper.SelectChoice(choices);
-            NewsIndex(choiceNo);
-        }
-        /// <summary>
-        /// Prompt the user to select input marks, output mark, calculate satats
-        /// calculate gradeProfile, output grade profile and input the marks
-        /// </summary>
-        public void NewsIndex(int choiceNo)
-        {
-            switch (choiceNo)
+
+            bool wantToQuit = false;
+            do
             {
-                case 1:
-                    AddMessagePost();
-                    break;
-                case 2:
-                    AddPhotoPost();
-                    break;
-                case 3:
-                    DisplayAll();
-                    break;
-                case 4:
-                    Environment.Exit(0);
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice");
-                    DisplayMenu("Please enter your choice > ");
-                    break;
+                int choice = ConsoleHelper.SelectChoice(choices);
+
+                switch (choice)
+                {
+                    case 1:
+                        PostMessage();
+                        break;
+                    case 2:
+                        PostImage();
+                        break;
+                    case 3:
+                        RemovePost();
+                        break;
+                    case 4:
+                        DisplayAll();
+                        break;
+                    case 5:
+                        DisplayByAuthor();
+                        break;
+                    case 6:
+                        DisplayByDate();
+                        break;
+                    case 7:
+                        AddComment();
+                        break;
+                    case 8:
+                        LikePosts();
+                        break;
+                    case 9:
+                        wantToQuit = true;
+                        break;
+                }
             }
+            while (!wantToQuit);
         }
+        
         /// <summary>
-        /// Ouput the heading and 
-        /// display the menu
+        /// 
         /// </summary>
-        public void NewsFeedMenu()
+      
+        private void LikePosts()
         {
-            ConsoleHelper.OutputHeading("\t\t Suadth Social Network");
-            DisplayMenu("Please enter your choice > ");
+            throw new NotImplementedException();
+        }
+
+        private void AddComment()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DisplayByDate()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DisplayByAuthor()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DisplayAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void RemovePost()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void PostImage()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void PostMessage()
+        {
+            throw new NotImplementedException();
         }
 
         public NewsApp()
         {
             NewsFeed = new NewsFeed();
         }
-
-        //public void Run()
-        //{
-        //    AddMessagePost();
-        //}
-        /// <summary>
-        /// Method for posting message in the news feed
-        /// Asking for the author name and their message
-        /// </summary>
-        private void AddMessagePost()
-        {
-            ConsoleHelper.OutputHeading("\t\t Add Message");
-
-            Console.Write(" Please enter the authors name > ");
-            string author = Console.ReadLine();
-
-            Console.Write(" Please enter the message > ");
-            string message = Console.ReadLine();
-
-            MessagePost post = new MessagePost(message, author);
-            NewsFeed.Posts.Add(post);
-            {
-                Console.WriteLine();
-                ConsoleHelper.OutputHeading("\t\t Suadth Social Network");
-                DisplayMenu("\nPlease enter your choice > ");
-            }
-        }/// <summary>
-         /// Method for posting image in the news feed
-         /// Asking for the author name and their image and caption
-         /// </summary>
-        private void AddPhotoPost()
-        {
-            ConsoleHelper.OutputHeading("\t\t Add Photo");
-           
-            Console.Write(" Please enter the authors name > ");
-            string author = Console.ReadLine();
-
-            Console.Write(" Please enter the Image file name > ");
-            string filename = Console.ReadLine();
-
-            Console.Write(" Please enter the Image caption > ");
-            string caption = Console.ReadLine();
-
-            PhotoPost post = new PhotoPost(author,filename, caption);
-            NewsFeed.Posts.Add(post);
-            {
-                Console.WriteLine();
-                ConsoleHelper.OutputHeading("\t\t Suadth Social Network");
-                DisplayMenu("\nPlease enter your choice > ");
-            }
-        }
-        /// <summary>
-        /// Ouputing all the messages and images
-        /// on the news feed
-        /// </summary>
-        private void DisplayAll()
-        {
-            NewsFeed.Display();
-            Console.WriteLine();
-            ConsoleHelper.OutputHeading("\t\t Suadth Social Network");
-            DisplayMenu("\nPlease enter your choice > ");
-        }
-
-
-
-
     }
 }
