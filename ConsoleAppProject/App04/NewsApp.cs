@@ -4,7 +4,7 @@ using ConsoleAppProject.Helpers;
 namespace ConsoleAppProject.App04
 {
     /// <summary>
-    /// This app will allow the user to add messages and photos
+    /// This Social Network app will allow the user to add messages and photos
     /// to a list of posts.  Users can also display those posts
     /// in a variety of ways.
     /// <author>
@@ -17,7 +17,7 @@ namespace ConsoleAppProject.App04
         private NewsFeed news = new NewsFeed();
 
         /// <summary>
-        /// 
+        /// This didplay menu for user to select the choices
         /// </summary>
         public void DisplayMenu()
         {
@@ -76,7 +76,7 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// Method for add like to the post
         /// </summary>
         private void LikePosts()
         {
@@ -84,7 +84,7 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// Method for add comment to the post
         /// </summary>
         private void AddComment()
         {
@@ -92,7 +92,7 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// Method for display post by date
         /// </summary>
         private void DisplayByDate()
         {
@@ -100,7 +100,7 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// Method for display post by author
         /// </summary>
         private void DisplayByAuthor()
         {
@@ -108,13 +108,16 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// Method for display the all the post
         /// </summary>
         private void DisplayAll()
         {
             news.Display();
         }
 
+        /// <summary>
+        /// Method for removing the posted massages in the news feed
+       /// </summary>
         private void RemovePost()
         {
             ConsoleHelper.OutputTitle($"Removing a Post");
@@ -125,7 +128,8 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// Method for posting image in the news feed
+        /// Asking for the author name and their image and caption
         /// </summary>
         private void PostImage()
         {
@@ -147,7 +151,8 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// Method for posting massage in the news feed
+        /// Asking for the author name and their massage
         /// </summary>
         private void PostMessage()
         {
@@ -166,7 +171,7 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// Method for input the aurthor name
         /// </summary>
         private string InputName()
         {
@@ -175,13 +180,6 @@ namespace ConsoleAppProject.App04
             
             return author;
         }
-
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        //public NewsApp()
-        //{
-        //    NewsFeed = new NewsFeed();
-        //}
+      
     }
 }
