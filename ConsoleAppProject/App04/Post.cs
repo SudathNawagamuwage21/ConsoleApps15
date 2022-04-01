@@ -13,9 +13,13 @@ namespace ConsoleAppProject.App04
     public class Post
     {
         // username of the post's author
+
+        public int PostId { get; }
         public String Author { get; set; }
 
         public DateTime Timestamp { get; }
+
+        public static int instances = 0;
 
         private int likes;
 
@@ -26,7 +30,10 @@ namespace ConsoleAppProject.App04
         /// </summary>
         public Post(String author)
         {
-            Author = author;
+            instances++;
+            PostId = instances;
+
+            this.Author = author;
             Timestamp = DateTime.Now;
 
             likes = 0;
@@ -69,12 +76,16 @@ namespace ConsoleAppProject.App04
         /// (Currently: Print to the text terminal. This is simulating display 
         /// in a web browser for now.)
         ///</summary>
-        public void Display()
+        public virtual void Display()
         {
             Console.WriteLine();
-            Console.WriteLine($"    Author: {Author}");
+            Console.WriteLine($"\tPost ID:\t {PostId}");
+            Console.WriteLine($"\tAuthor:\t\t {Author}");
             Console.WriteLine($"    Time Elpased: {FormatElapsedTime(Timestamp)}");
-            
+            Console.WriteLine($"\tDate Posted:\t {Timestamp.ToLongDateString()}");
+            Console.WriteLine($"\tTime Posted:\t {Timestamp.ToLongTimeString()}");
+            Console.WriteLine("===================================================");
+
             Console.WriteLine();
 
             if (likes > 0)
@@ -96,6 +107,14 @@ namespace ConsoleAppProject.App04
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static int GetNumberOfPosts()
+        {
+            return instances;
+        }
 
         /// <summary>
         /// Create a string describing a time point in the past in terms 
@@ -125,7 +144,7 @@ namespace ConsoleAppProject.App04
                 return seconds + " seconds ago";
             }
         }
-
+       
     }
 
 
