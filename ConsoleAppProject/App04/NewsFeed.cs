@@ -23,19 +23,26 @@ namespace ConsoleAppProject.App04
     public class NewsFeed
     {
         public const string AUTHOR = "Sudath";
-        public List<Post> Posts { get; set; }
+        public const string AUTHOR1 = "Sudath";
+        public List<Post> posts { get; set; }
 
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
         public NewsFeed()
         {   
-            Posts = new List<Post>();
+            posts = new List<Post>();
 
-            MessagePost post = new MessagePost(AUTHOR, "I Like Visual Studio 2019");
+            MessagePost post = new MessagePost(AUTHOR, "I Like Visual Studio 2021");
             AddMessagePost(post);
 
-            PhotoPost photoPost = new PhotoPost(AUTHOR, "Photo1.jpg", "Visual Studio 2019");
+            PhotoPost photoPost = new PhotoPost(AUTHOR, "Photo1.jpg", "Visual Studio 2021");
+            AddPhotoPost(photoPost);
+
+            MessagePost post1 = new MessagePost(AUTHOR1, "I Like Visual Studio 2022");
+            AddMessagePost(post);
+
+            PhotoPost photoPost1 = new PhotoPost(AUTHOR1, "Photo2.jpg", "Visual Studio 2022");
             AddPhotoPost(photoPost);
         }
                        
@@ -46,7 +53,7 @@ namespace ConsoleAppProject.App04
         ///</summary>
         public void AddMessagePost(MessagePost message)
         {
-            Posts.Add(message);
+            posts.Add(message);
         }
 
         /// <summary>
@@ -55,7 +62,7 @@ namespace ConsoleAppProject.App04
         /// <param name="photo"></param>
         public void AddPhotoPost(PhotoPost photo)
         {
-            Posts.Add(photo);
+            posts.Add(photo);
         }
 
         /// <summary>
@@ -83,7 +90,7 @@ namespace ConsoleAppProject.App04
                     pp.Display();
                 }
 
-                Posts.Remove(post);
+                posts.Remove(post);
                 post.Display();
             }
         }
@@ -97,7 +104,7 @@ namespace ConsoleAppProject.App04
         {
             ConsoleHelper.OutputTitle("Display All Posts");
 
-            foreach (Post post in Posts)
+            foreach (Post post in posts)
             {
                 if (post.PostId == id)
                 {
@@ -114,7 +121,7 @@ namespace ConsoleAppProject.App04
         public void Display()
         {
             // display all text posts
-            foreach (Post post in Posts)
+            foreach (Post post in posts)
             {
                 post.Display();
                 Console.WriteLine();   // empty line between posts

@@ -42,7 +42,8 @@ namespace ConsoleAppProject.App04
 
         public override void Display()
         {
-            Console.WriteLine("Photo Post Display");
+            Console.WriteLine("===================================================");
+            Console.WriteLine("\t\t Photo Post Display");
             Console.WriteLine($"\t\tFilename: [{Filename}]");
             Console.WriteLine($"\t\tCaption: [{Caption}]");
             base.Display();

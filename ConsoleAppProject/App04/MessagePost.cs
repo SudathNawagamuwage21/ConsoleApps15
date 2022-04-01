@@ -37,7 +37,8 @@ namespace ConsoleAppProject.App04
         /// </summary>
         public override void Display()
         {
-            Console.WriteLine("Massage Post Display");
+            Console.WriteLine("===================================================");
+            Console.WriteLine("\t\tMassage Post Display");
             Console.WriteLine($"\t\tMessage: {Message}");
             base.Display();
         }
