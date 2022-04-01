@@ -23,7 +23,8 @@ namespace ConsoleAppProject.App04
     public class NewsFeed
     {
         public const string AUTHOR = "Sudath";
-                
+        
+
         private readonly List<Post> posts; 
 
         ///<summary>
@@ -38,12 +39,7 @@ namespace ConsoleAppProject.App04
 
             PhotoPost photoPost = new PhotoPost(AUTHOR, "Photo1.jpg", "Visual Studio 2021");
             AddPhotoPost(photoPost);
-
-            //MessagePost post1 = new MessagePost(AUTHOR1, "I Like Visual Studio 2022");
-            //AddMessagePost(post);
-
-            //PhotoPost photoPost1 = new PhotoPost(AUTHOR1, "Photo2.jpg", "Visual Studio 2022");
-            //AddPhotoPost(photoPost);
+         
         }
                        
         ///<summary>
@@ -89,6 +85,25 @@ namespace ConsoleAppProject.App04
                 {
                     post.Display();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Add comment to the post
+        /// </summary>
+        public void AddPostComment(int id, string text)
+        {
+            Post post = FindPost(id);
+
+            if (post == null)
+            {
+                Console.WriteLine($"\nPost with ID: {id} does not exist!\n");
+            }
+            else
+            {
+                Console.WriteLine($"\nThe following comment have been added to post {id}!\n");
+                post.AddComment(text);
+                post.Display();
             }
         }
 

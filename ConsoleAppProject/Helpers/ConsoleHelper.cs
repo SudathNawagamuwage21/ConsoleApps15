@@ -157,17 +157,21 @@ namespace ConsoleAppProject.Helpers
         public static void OutputTitle(string title)
         {
             Console.ForegroundColor = ConsoleColor.Green;
+              
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine($"               {title}");
+            Console.WriteLine("---------------------------------------------\n");
 
-            Console.WriteLine($"\n {title}");
-            Console.Write(" ");
+            // Console.Write(" ");
 
-            for (int count = 0; count <= title.Length; count++)
-            {
-                Console.Write("-");
-            }
+            //for (int count = 0; count <= title.Length; count++)
+            //{
+            //    Console.Write("-");
+            //}
 
-            Console.WriteLine("\n");
-            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Blue;
+            //Console.WriteLine("\n");
+            // Console.ResetColor();
         }
     }
 }

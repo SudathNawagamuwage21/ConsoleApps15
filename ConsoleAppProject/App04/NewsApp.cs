@@ -23,6 +23,8 @@ namespace ConsoleAppProject.App04
         {
             ConsoleHelper.OutputHeading("\t\t Sudath's News Feed");
 
+            Console.ForegroundColor = ConsoleColor.Blue;
+
             string[] choices = new string[]
             {
                 "Post Message",
@@ -88,7 +90,12 @@ namespace ConsoleAppProject.App04
         /// </summary>
         private void AddComment()
         {
-            throw new NotImplementedException();
+            ConsoleHelper.OutputTitle("Add a comment to a Post");
+            int id = (int)ConsoleHelper.InputNumber("Please enter the post id > ", 1, Post.GetNumberOfPosts());
+            
+            Console.WriteLine("Enter the comment you want to add > ");
+            string comment = Console.ReadLine();
+            news.AddPostComment(id, comment);
         }
 
         /// <summary>
