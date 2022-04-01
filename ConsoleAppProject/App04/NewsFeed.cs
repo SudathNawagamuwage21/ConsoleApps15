@@ -23,8 +23,9 @@ namespace ConsoleAppProject.App04
     public class NewsFeed
     {
         public const string AUTHOR = "Sudath";
-        public const string AUTHOR1 = "Sudath";
-        public List<Post> posts { get; set; }
+        //public const string AUTHOR1 = "Sudath";
+        
+        private readonly List<Post> posts; 
 
         ///<summary>
         /// Construct an empty news feed.
@@ -39,11 +40,11 @@ namespace ConsoleAppProject.App04
             PhotoPost photoPost = new PhotoPost(AUTHOR, "Photo1.jpg", "Visual Studio 2021");
             AddPhotoPost(photoPost);
 
-            MessagePost post1 = new MessagePost(AUTHOR1, "I Like Visual Studio 2022");
-            AddMessagePost(post);
+            //MessagePost post1 = new MessagePost(AUTHOR1, "I Like Visual Studio 2022");
+            //AddMessagePost(post);
 
-            PhotoPost photoPost1 = new PhotoPost(AUTHOR1, "Photo2.jpg", "Visual Studio 2022");
-            AddPhotoPost(photoPost);
+            //PhotoPost photoPost1 = new PhotoPost(AUTHOR1, "Photo2.jpg", "Visual Studio 2022");
+            //AddPhotoPost(photoPost);
         }
                        
         ///<summary>

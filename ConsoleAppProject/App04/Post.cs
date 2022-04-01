@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleAppProject.App04
 {   /// <summary>
@@ -15,7 +14,7 @@ namespace ConsoleAppProject.App04
         // username of the post's author
 
         public int PostId { get; }
-        public String Author { get; set; }
+        public String Username { get; set; }
 
         public DateTime Timestamp { get; }
 
@@ -33,7 +32,7 @@ namespace ConsoleAppProject.App04
             instances++;
             PostId = instances;
 
-            this.Author = author;
+            this.Username = author;
             Timestamp = DateTime.Now;
 
             likes = 0;
@@ -80,7 +79,7 @@ namespace ConsoleAppProject.App04
         {
             Console.WriteLine();
             Console.WriteLine($"\tPost ID:\t {PostId}");
-            Console.WriteLine($"\tAuthor:\t\t {Author}");
+            Console.WriteLine($"\tAuthor:\t\t {Username}");
             Console.WriteLine($"    Time Elpased: {FormatElapsedTime(Timestamp)}");
             Console.WriteLine($"\tDate Posted:\t {Timestamp.ToLongDateString()}");
             Console.WriteLine($"\tTime Posted:\t {Timestamp.ToLongTimeString()}");
