@@ -14,8 +14,8 @@ namespace ConsoleAppProject.App04
     public class NewsApp
     {
 
-        public NewsFeed NewsFeed { get; set; }
-        
+        private NewsFeed news = new NewsFeed();
+
         /// <summary>
         /// 
         /// </summary>
@@ -112,16 +112,16 @@ namespace ConsoleAppProject.App04
         /// </summary>
         private void DisplayAll()
         {
-            NewsFeed.Display();
+            news.Display();
         }
 
         private void RemovePost()
         {
-            ConsoleHelper.OutputTitle("Removing a Post");
+            ConsoleHelper.OutputTitle($"Removing a Post");
 
             int id = (int)ConsoleHelper.InputNumber("Please enter the post id > ", 1, Post.GetNumberOfPosts());
 
-            NewsFeed.RemovePost(id);
+            news.RemovePost(id);
         }
 
         /// <summary>
@@ -130,6 +130,7 @@ namespace ConsoleAppProject.App04
         private void PostImage()
         {
              ConsoleHelper.OutputTitle("Posting an Image/Photo");
+             
              string author = InputName();
 
              Console.WriteLine("Please enter your image file name > ");
@@ -139,12 +140,10 @@ namespace ConsoleAppProject.App04
              string caption = Console.ReadLine();
 
              PhotoPost post = new PhotoPost(author, filename, caption);
-             NewsFeed.AddPhotoPost(post);
+             news.AddPhotoPost(post);
 
              ConsoleHelper.OutputTitle("You have just posted this image:");
              post.Display();
-          
-
         }
 
         /// <summary>
@@ -153,13 +152,14 @@ namespace ConsoleAppProject.App04
         private void PostMessage()
         {
             ConsoleHelper.OutputTitle("Posting an Message");
+           
             string author = InputName();
 
             Console.WriteLine("Please enter your Message > ");
             string message = Console.ReadLine();
 
             MessagePost post = new MessagePost(author, message);
-            NewsFeed.AddMessagePost(post);
+            news.AddMessagePost(post);
 
             ConsoleHelper.OutputTitle("You have just posted this message:");
             post.Display();
@@ -172,15 +172,16 @@ namespace ConsoleAppProject.App04
         {
             Console.Write("Please enter your name > ");
             string author = Console.ReadLine();
+            
             return author;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public NewsApp()
-        {
-            NewsFeed = new NewsFeed();
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //public NewsApp()
+        //{
+        //    NewsFeed = new NewsFeed();
+        //}
     }
 }

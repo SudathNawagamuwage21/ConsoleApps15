@@ -23,8 +23,7 @@ namespace ConsoleAppProject.App04
     public class NewsFeed
     {
         public const string AUTHOR = "Sudath";
-        //public const string AUTHOR1 = "Sudath";
-        
+                
         private readonly List<Post> posts; 
 
         ///<summary>
@@ -76,21 +75,12 @@ namespace ConsoleAppProject.App04
 
             if (post == null)
             {
-                Console.WriteLine($"\nPost with ID: {id} does not exist!\n");
+                Console.WriteLine($" \nPost with ID: {id} does not exist!\n");
             }
             else
             {
-                Console.WriteLine($"\nThe following Post {id} has been removed!\n");
-
-                if (post is MessagePost mp)
-                {
-                    mp.Display();
-                }
-                else if (post is PhotoPost pp)
-                {
-                    pp.Display();
-                }
-
+                Console.WriteLine($" \nThe following Post {id} has been removed!\n");
+                              
                 posts.Remove(post);
                 post.Display();
             }
@@ -103,8 +93,6 @@ namespace ConsoleAppProject.App04
         /// <returns></returns>
         public Post FindPost(int id)
         {
-            ConsoleHelper.OutputTitle("Display All Posts");
-
             foreach (Post post in posts)
             {
                 if (post.PostId == id)
@@ -121,6 +109,8 @@ namespace ConsoleAppProject.App04
         ///</summary>
         public void Display()
         {
+            ConsoleHelper.OutputTitle("Display All Posts");
+
             // display all text posts
             foreach (Post post in posts)
             {
