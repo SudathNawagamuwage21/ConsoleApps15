@@ -1,7 +1,5 @@
 ﻿using System;
 
-
-
 namespace ConsoleAppProject.App04
 {
     ///<summary>
@@ -39,7 +37,9 @@ namespace ConsoleAppProject.App04
             this.Filename = filename;
             this.Caption = caption;
         }
-
+        /// <summary>
+        /// Display the new photo posted 
+        /// </summary>
         public override void Display()
         {
             Console.WriteLine("===================================================");

@@ -96,7 +96,11 @@ namespace ConsoleAppProject.App04
         /// </summary>
         private void DisplayByDate()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Enter the date of post you want to display > ");
+            string date = Console.ReadLine();
+            
+            ConsoleHelper.OutputTitle($"Posts from the {date}");
+            news.FindDate(date);
         }
 
         /// <summary>
@@ -104,7 +108,11 @@ namespace ConsoleAppProject.App04
         /// </summary>
         private void DisplayByAuthor()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Enter the name of user you want to display > ");
+            string author = Console.ReadLine();
+            
+            ConsoleHelper.OutputTitle($"Posts by {author}");
+            news.DisplayAuthorPost(author);
         }
 
         /// <summary>

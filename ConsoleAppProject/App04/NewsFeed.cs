@@ -48,7 +48,6 @@ namespace ConsoleAppProject.App04
                        
         ///<summary>
         /// Add a Photo post to the news feed.
-        /// 
         /// @param text  The Photo post to be added.
         ///</summary>
         public void AddMessagePost(MessagePost message)
@@ -56,19 +55,46 @@ namespace ConsoleAppProject.App04
             posts.Add(message);
         }
 
-        /// <summary>
-        /// 
+        ///<summary>
+        /// Add a Photo to this post.
+        /// The new photo to add.
         /// </summary>
-        /// <param name="photo"></param>
         public void AddPhotoPost(PhotoPost photo)
         {
             posts.Add(photo);
         }
 
         /// <summary>
-        /// 
+        /// Display the author with output the post
         /// </summary>
-        /// <param name="id"></param>
+        public void DisplayAuthorPost(string author)
+        {
+            foreach (Post post in posts)
+            {
+                if (post.Username == author)
+                {
+                    post.Display();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Display the Date with output the post
+        /// </summary>
+        public void FindDate(string date)
+        {
+            foreach (Post post in posts)
+            {
+                if (post.Timestamp.ToLongDateString().Contains(date))
+                {
+                    post.Display();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Removeing the all the new post by id
+        /// </summary>
         public void RemovePost(int id)
         {
             Post post = FindPost(id);
@@ -87,10 +113,8 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// Find the post
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         public Post FindPost(int id)
         {
             foreach (Post post in posts)

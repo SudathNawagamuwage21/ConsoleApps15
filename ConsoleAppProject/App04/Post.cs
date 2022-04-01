@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace ConsoleAppProject.App04
 {   /// <summary>
-    /// The post class is the 
+    /// The post class is the the super/base class or parent
+    /// has as sub child Massagepost and PhotoPost
     /// </summary>
     /// <author>
     /// Sudath Nawagamuwage 
@@ -57,21 +58,18 @@ namespace ConsoleAppProject.App04
                 likes--;
             }
         }
+
         ///<summary>
         /// Add a comment to this post.
-        ///</summary>
-        /// <param name="text">
         /// The new comment to add.
-        /// </param>
+        /// </summary>
         public void AddComment(String text)
         {
             comments.Add(text);
         }
 
-
         ///<summary>
         /// Display the details of this post.
-        /// 
         /// (Currently: Print to the text terminal. This is simulating display 
         /// in a web browser for now.)
         ///</summary>
@@ -80,7 +78,7 @@ namespace ConsoleAppProject.App04
             Console.WriteLine();
             Console.WriteLine($"\tPost ID:\t {PostId}");
             Console.WriteLine($"\tAuthor:\t\t {Username}");
-            Console.WriteLine($"    Time Elpased: {FormatElapsedTime(Timestamp)}");
+            Console.WriteLine($"\tTime Elpased:\t {FormatElapsedTime(Timestamp)}");
             Console.WriteLine($"\tDate Posted:\t {Timestamp.ToLongDateString()}");
             Console.WriteLine($"\tTime Posted:\t {Timestamp.ToLongTimeString()}");
             Console.WriteLine("===================================================");
@@ -107,9 +105,8 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// count the number of the posts
         /// </summary>
-        /// <returns></returns>
         public static int GetNumberOfPosts()
         {
             return instances;

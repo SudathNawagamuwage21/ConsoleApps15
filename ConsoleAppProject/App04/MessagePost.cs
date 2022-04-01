@@ -33,7 +33,7 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// Display the new added massage post
         /// </summary>
         public override void Display()
         {
