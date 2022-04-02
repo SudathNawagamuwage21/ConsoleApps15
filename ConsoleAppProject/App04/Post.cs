@@ -118,6 +118,9 @@ namespace ConsoleAppProject.App04
                 foreach (string comments in comments)
                 {
                     Console.WriteLine($"\tComment: {comments}\n");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("===================================================");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
 
                 }
                
