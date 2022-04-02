@@ -158,9 +158,9 @@ namespace ConsoleAppProject.Helpers
         {
             Console.ForegroundColor = ConsoleColor.Green;  
               
-            Console.WriteLine("---------------------------------------------");
-            Console.WriteLine($"               {title}");
-            Console.WriteLine("---------------------------------------------\n");
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine($"                {title}");
+            Console.WriteLine("---------------------------------------------------\n");
 
             // Console.Write(" ");
 
