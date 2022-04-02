@@ -43,7 +43,15 @@ namespace ConsoleAppProject.App04
 
          
         }
-                       
+
+        public Post Post
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         ///<summary>
         /// Add a Photo post to the news feed.
         /// @param text  The Photo post to be added.

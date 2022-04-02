@@ -16,6 +16,14 @@ namespace ConsoleAppProject.App04
 
         private NewsFeed news = new NewsFeed();
 
+        public NewsFeed NewsFeed
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// This didplay menu for user to select the choices
         /// </summary>

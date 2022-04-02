@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Diagrams\App03\NewFolder\" />
-    <Folder Include="Diagrams\App04\" />
   </ItemGroup>
 
 </Project>
