@@ -156,7 +156,7 @@ namespace ConsoleAppProject.Helpers
         /// </summary>
         public static void OutputTitle(string title)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Green;  
               
             Console.WriteLine("---------------------------------------------");
             Console.WriteLine($"               {title}");
@@ -169,7 +169,7 @@ namespace ConsoleAppProject.Helpers
             //    Console.Write("-");
             //}
 
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             //Console.WriteLine("\n");
             // Console.ResetColor();
         }

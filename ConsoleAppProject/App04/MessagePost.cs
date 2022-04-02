@@ -37,10 +37,13 @@ namespace ConsoleAppProject.App04
         /// </summary>
         public override void Display()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("===================================================");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\t\tMassage Post Display");
             Console.WriteLine($"\t\tMessage: {Message}");
             base.Display();
+            
         }
 
     }

@@ -23,7 +23,7 @@ namespace ConsoleAppProject.App04
         {
             ConsoleHelper.OutputHeading("\t\t Sudath's News Feed");
 
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             string[] choices = new string[]
             {
@@ -32,7 +32,6 @@ namespace ConsoleAppProject.App04
                 "Remove Post",
                 "Display All Posts",
                 "Display Posts by Author",
-                "Display Posts by Date",
                 "Add Comment to Post",
                 "Like/Unlike Post",
                 "Quit"
@@ -61,15 +60,12 @@ namespace ConsoleAppProject.App04
                         DisplayByAuthor();
                         break;
                     case 6:
-                        DisplayByDate();
-                        break;
-                    case 7:
                         AddComment();
                         break;
-                    case 8:
+                    case 7:
                         LikePosts();
                         break;
-                    case 9:
+                    case 8:
                         wantToQuit = true;
                         break;
                 }
@@ -118,19 +114,7 @@ namespace ConsoleAppProject.App04
             string comment = Console.ReadLine();
             news.AddPostComment(id, comment);
         }
-
-        /// <summary>
-        /// Method for display post by date
-        /// </summary>
-        private void DisplayByDate()
-        {
-            Console.WriteLine("Enter the date of post you want to display > ");
-            string date = Console.ReadLine();
-            
-            ConsoleHelper.OutputTitle($"Posts from the {date}");
-            news.FindDate(date);
-        }
-
+      
         /// <summary>
         /// Method for display post by author
         /// </summary>

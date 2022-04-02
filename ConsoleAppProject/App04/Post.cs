@@ -22,7 +22,7 @@ namespace ConsoleAppProject.App04
         public static int instances = 0;
 
         private int likes;
-        private int unlikes;
+       // private int unlikes;
 
         private readonly List<String> comments;
 
@@ -82,7 +82,9 @@ namespace ConsoleAppProject.App04
             Console.WriteLine($"\tTime Elpased:\t {FormatElapsedTime(Timestamp)}");
             Console.WriteLine($"\tDate Posted:\t {Timestamp.ToLongDateString()}");
             Console.WriteLine($"\tTime Posted:\t {Timestamp.ToLongTimeString()}");
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("===================================================");
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine();
 
@@ -94,25 +96,29 @@ namespace ConsoleAppProject.App04
             {
                 Console.WriteLine();
             }
-            if (unlikes > 0)
-            {
-                Console.WriteLine($"    Unlikes: -  {unlikes}  people like this.");
-            }
-            else
-            {
-                Console.WriteLine();
-            }
+            //if (unlikes > 0)
+            //{
+            //    Console.WriteLine($"    Unlikes: -  {unlikes}  people like this.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine();
+            //}
 
             if (comments.Count == 0)
             {
                 Console.WriteLine("    No comments.");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("===================================================");
+                Console.ForegroundColor = ConsoleColor.Yellow;
             }
             else
             {
                 Console.WriteLine($"    Comment(s): {comments.Count}  Click here to view.");
-                foreach (string comment in comments)
+                foreach (string comments in comments)
                 {
-                    Console.WriteLine(comment);
+                    Console.WriteLine($"\tComment: {comments}\n");
+
                 }
                
                 

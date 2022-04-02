@@ -42,7 +42,9 @@ namespace ConsoleAppProject.App04
         /// </summary>
         public override void Display()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("===================================================");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\t\t Photo Post Display");
             Console.WriteLine($"\t\tFilename: [{Filename}]");
             Console.WriteLine($"\t\tCaption: [{Caption}]");
