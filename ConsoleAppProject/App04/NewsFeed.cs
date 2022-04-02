@@ -108,6 +108,44 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
+        /// Add like to the post
+        /// </summary>
+        public void LikePost(int id)
+        {
+            Post post = FindPost(id);
+
+            if (post == null)
+            {
+                Console.WriteLine($"\nPost with ID: {id} does not exist!\n");
+            }
+            else
+            {
+                Console.WriteLine($"\nYou have liked the the following post {id}!\n");
+                post.Like();
+                post.Display();
+            }
+        }
+
+        /// <summary>
+        /// Add Unlike to the post
+        /// </summary>
+        public void UnLikePost(int id)
+        {
+            Post post = FindPost(id);
+
+            if (post == null)
+            {
+                Console.WriteLine($"\nPost with ID: {id} does not exist!\n");
+            }
+            else
+            {
+                Console.WriteLine($"\nYou have Uniked the the following post {id}!\n");
+                post.Unlike();
+                post.Display();
+            }
+        }
+
+        /// <summary>
         /// Removeing the all the new post by id
         /// </summary>
         public void RemovePost(int id)
