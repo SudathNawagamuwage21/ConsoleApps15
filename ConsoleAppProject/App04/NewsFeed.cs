@@ -101,7 +101,7 @@ namespace ConsoleAppProject.App04
             }
             else
             {
-                Console.WriteLine($"\nThe following comment have been added to post {id}!\n");
+                Console.WriteLine($"\nThe comment have been added to post {id}!\n");
                 post.AddComment(text);
                 post.Display();
             }
@@ -120,7 +120,7 @@ namespace ConsoleAppProject.App04
             }
             else
             {
-                Console.WriteLine($"\nYou have liked the the following post {id}!\n");
+                Console.WriteLine($"\nYou have liked the the post {id}!\n");
                 post.Like();
                 post.Display();
             }
@@ -129,7 +129,7 @@ namespace ConsoleAppProject.App04
         /// <summary>
         /// Add Unlike to the post
         /// </summary>
-        public void UnLikePost(int id)
+        public void UnlikePost(int id)
         {
             Post post = FindPost(id);
 
@@ -139,7 +139,7 @@ namespace ConsoleAppProject.App04
             }
             else
             {
-                Console.WriteLine($"\nYou have Uniked the the following post {id}!\n");
+                Console.WriteLine($"\nYou have unliked the the post {id}!\n");
                 post.Unlike();
                 post.Display();
             }

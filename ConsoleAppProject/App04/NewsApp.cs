@@ -96,12 +96,12 @@ namespace ConsoleAppProject.App04
                     break;
                 case "unlike":
                     Console.WriteLine("Unlike a post\n");
-                    news.LikePost(id);
+                    news.UnlikePost(id);
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Try Again.");
                     LikePosts();
-                    break ;
+                    break;
             }
 
         }

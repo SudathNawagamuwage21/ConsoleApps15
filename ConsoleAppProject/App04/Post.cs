@@ -101,6 +101,7 @@ namespace ConsoleAppProject.App04
             else
             {
                 Console.WriteLine($"    Comment(s): {comments.Count}  Click here to view.");
+                
             }
         }
 
