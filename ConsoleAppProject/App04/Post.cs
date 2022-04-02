@@ -22,6 +22,7 @@ namespace ConsoleAppProject.App04
         public static int instances = 0;
 
         private int likes;
+        private int unlikes;
 
         private readonly List<String> comments;
 
@@ -93,6 +94,14 @@ namespace ConsoleAppProject.App04
             {
                 Console.WriteLine();
             }
+            if (unlikes > 0)
+            {
+                Console.WriteLine($"    Unlikes: -  {unlikes}  people like this.");
+            }
+            else
+            {
+                Console.WriteLine();
+            }
 
             if (comments.Count == 0)
             {
@@ -101,6 +110,11 @@ namespace ConsoleAppProject.App04
             else
             {
                 Console.WriteLine($"    Comment(s): {comments.Count}  Click here to view.");
+                foreach (string comment in comments)
+                {
+                    Console.WriteLine(comment);
+                }
+               
                 
             }
         }

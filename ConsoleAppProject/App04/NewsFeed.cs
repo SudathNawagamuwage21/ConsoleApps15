@@ -36,9 +36,11 @@ namespace ConsoleAppProject.App04
 
             MessagePost post = new MessagePost(AUTHOR, "I Like Visual Studio 2021");
             AddMessagePost(post);
+            post.AddComment("hello");
 
             PhotoPost photoPost = new PhotoPost(AUTHOR, "Photo1.jpg", "Visual Studio 2021");
             AddPhotoPost(photoPost);
+
          
         }
                        
